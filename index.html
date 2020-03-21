@@ -3,15 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-   <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <!-- Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/nouislider@14.1.1/distribute/nouislider.css">
 
     <title>test</title>
 
@@ -20,911 +17,620 @@
       {
         margin-top: 30px;
       }
-      /*.ui_pages .card .card-body .card-text, #ui_page_start .card .card-body .card-text
+      .ui_page1_quest
       {
-        height: 40vh;
-      }*/
-      .ui_pages .card .card-body .card-text
-      {
-        height: 40vh;
+        text-align: left;
       }
 
+      .btn-test
+      {
+        color: #fff;
+        background-color: #411769!important;
+      }
+      .pagination.pg-blue .page-item.active .page-link 
+      {
+        background-color: #411769!important;
+      }
+      .custom-control-input:checked~.custom-control-label::before {
+        color: #fff;
+        border-color: #411769!important;
+        background-color: #411769!important;
+      }
+      .custom-checkbox
+      {
+        padding-bottom: 10px!important;
+        padding-top: 10px!important;
+        padding-right: 10px!important;
+        margin-bottom: 10px!important;
+      }
+      .custom-control-label
+      {
+        margin-left: 10px!important;
+      }
+      .ui_msg_quest
+      {
+        position: fixed;
+        top: 20%;
+        z-index: 99999999;
+      }
+
+
+
+      .ui_back
+      {
+        background: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .ui_msg_box_hide
+      {
+        height: 0;
+      }
+
+      .btn-test:hover, .btn-test:active, .btn-test:focus {
+        color: #c3c8ce !important;
+      }
+      .noUi-marker
+      {
+        display: none !important;
+        height: 0 !important;
+      }
+
+      .noUi-pips-horizontal {
+          padding-top: 0px !important;
+          padding-bottom: 10px !important;
+          padding-right: 0px !important;
+          padding-left: 0px !important;
+      }
+      .noUi-connect {
+          background: #411769!important;
+      }
+      .main_div
+      {
+        height: 90vh;
+      }
+      #ui_main_row
+      {
+        height: inherit;
+      }
     </style>
+    
   </head>
-  <body>
-    <div class="container-fluid" style="padding-top: 15px;">
-        <div class="row">
+    <body>
+
+    <div class="container-fluid main_div">
+        <div id="ui_main_row" class="row">
 
             <div class="col s12 m6" id="ui_page_start" style="display: none">
-              <div class="card">
+              <div class="card shadow-none">
                 <div class="card-body text-center">
-                  <span class="card-title"><b>Какая Instagram-профессия вам подходит?</b></span>
+                  <span class="card-title"><b>Калькулятор вашего дохода.<br>Узнайте, сколько денег вы можете зарабатывать в Instagram!</b></span>
                   <div class="card-text">
-                      <p>Инструкция к тесту</p>
-                      <p>Количество вопросов в тесте: 17</p>
-                      <button type="button" class="btn btn-primary" id="ui_start_test">Начать тестирование</button>   
+                      <button type="button" class="btn btn-test" id="ui_start_test">Узнать</button>   
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="col s12 m6" id="ui_page_result" style="display: none">
-              <div class="card">
+              <div class="card shadow-none">
                 <div class="card-body">
-                  <span class="card-title"><b>Результат</b></span>
+                  <h5 class="card-title" style="text-align: center;">Вы можете ежемесячно зарабатывать в Instagram</h5>
                   <p class="card-text">
-                      <p>Дата завершения: <b id="ui_datetime_end"></b></p>
-                      <p>Потрачено времени: <b id="ui_time_test"></b></p>
-                      <!-- <p>Ваше имя: Введите ваше имя</p> -->
-                      <div>
-                        <p>Спасибо, что прошли наш тест “Какая Instagram-профессия вам подходит?”
-                        Это ваш первый шаг в мир удаленной работы с крутым окружением, достойной оплатой труда и постоянным личностным ростом!
-                        Мы проанализировали все ваши ответы и хотим сказать, что ваша идеальная работа – это
-                        </p>
-                        <div class="accordion" id="ui_result_profs">
+                    <h5 style="text-align: center;"><span id="ui_result_sum">000</span> руб./мес</h5>
+                    <p style="text-align: center;">Отличная сумма для старта!</p>
+                    <p>Теперь ждем вас на нашем курсе, где вместе решим вопрос с поиском клиентов и увеличением компетенций!</p>
+                    <h6><p class=" mb-2 text-muted">Данные по стоимости услуг взяты на основе:<br>- статистики главного сайта вакансий Hh.ru<br>- анализа рынка Instagram<br>- информации из блогерских чатов</p></h6>
+                    <button id="ui_to_main_study" class="btn btn-test" style="text-align: center;">Принять участие</button>
 
-                          <div class="card z-depth-0 bordered ui_result_profs" id="ui_res_accordion_prof1">
-                            <div class="card-header" id="ui_res_prof1_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#ui_res_prof1"
-                                  aria-expanded="true" aria-controls="ui_res_prof1">
-                                  Копирайтер
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof1" class="collapse show" aria-labelledby="ui_res_prof1_head"
-                              data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                labore sustainable.
-                              </div>
-                            </div>
-                          </div>
+                  </p>
+                </div>
+              </div>
+            </div>
 
-                          <div class="card z-depth-0 bordered ui_result_profs"  id="ui_res_accordion_prof2">
-                            <div class="card-header" id="ui_res_prof2_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                  data-target="#ui_res_prof2" aria-expanded="false" aria-controls="ui_res_prof2">
-                                  Менеджер по визуалу
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof2" class="collapse" aria-labelledby="ui_res_prof2_head" data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                                wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
-                                eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred
-                                nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                                farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-                                labore sustainable.
-                              </div>
-                            </div>
-                          </div>
+            <div class="col text-center s12 m6 ui_pages" id="ui_page1" style="display: none">
+              
+              <div class="card shadow-none">
+                <div class="card-body">
+                  <h5 class="card-title">Начинаем подсчет!</h5>
+                  <h5 class="card-subtitle mb-2 text-muted" style="padding-top: 2%;">Выберите задачи, которые вы хотели бы выполнять</h5>
+                  <p class="card-text"> 
 
-                          <div class="card z-depth-0 bordered ui_result_profs" id="ui_res_accordion_prof3">
-                            <div class="card-header" id="ui_res_prof3_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                  data-target="#ui_res_prof3" aria-expanded="false" aria-controls="ui_res_prof3">
-                                  Менеджер по  stories
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof3" class="collapse" aria-labelledby="ui_res_prof3_head" data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="card z-depth-0 bordered ui_result_profs" id="ui_res_accordion_prof4">
-                            <div class="card-header" id="ui_res_prof4_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                  data-target="#ui_res_prof4" aria-expanded="false" aria-controls="ui_res_prof4">
-                                  Менеджер по рекламе
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof4" class="collapse" aria-labelledby="ui_res_prof4_head" data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                              </div>
-                            </div>
-                          </div>
-
-                           <div class="card z-depth-0 bordered ui_result_profs" id="ui_res_accordion_prof5">
-                            <div class="card-header" id="ui_res_prof5_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                  data-target="#ui_res_prof5" aria-expanded="false" aria-controls="ui_res_prof5">
-                                  Администратор блога (директ, комментарии и т.д.)
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof5" class="collapse" aria-labelledby="ui_res_prof5_head" data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="card z-depth-0 bordered ui_result_profs" id="ui_res_accordion_prof6">
-                            <div class="card-header" id="ui_res_prof6_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                  data-target="#ui_res_prof6" aria-expanded="false" aria-controls="ui_res_prof6">
-                                  SMM-специалист
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof6" class="collapse" aria-labelledby="ui_res_prof6_head" data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="card z-depth-0 bordered ui_result_profs" id="ui_res_accordion_prof7">
-                            <div class="card-header" id="ui_res_prof7_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                  data-target="#ui_res_prof7" aria-expanded="false" aria-controls="ui_res_prof7">
-                                  Монтажер видео
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof7" class="collapse" aria-labelledby="ui_res_prof7_head" data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="card z-depth-0 bordered ui_result_profs" id="ui_res_accordion_prof8">
-                            <div class="card-header" id="ui_res_prof8_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                  data-target="#ui_res_prof8" aria-expanded="false" aria-controls="ui_res_prof8">
-                                  Организатор марафонов и гивов
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof8" class="collapse" aria-labelledby="ui_res_prof8_head" data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="card z-depth-0 bordered ui_result_profs" id="ui_res_accordion_prof9">
-                            <div class="card-header" id="ui_res_prof9_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                  data-target="#ui_res_prof9" aria-expanded="false" aria-controls="ui_res_prof9">
-                                  Маркетолог
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof9" class="collapse" aria-labelledby="ui_res_prof9_head" data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="card z-depth-0 bordered ui_result_profs" id="ui_res_accordion_prof10">
-                            <div class="card-header" id="ui_res_prof10_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                  data-target="#ui_res_prof10" aria-expanded="false" aria-controls="ui_res_prof10">
-                                  Фотограф для блогеров
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof10" class="collapse" aria-labelledby="ui_res_prof10_head" data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="card z-depth-0 bordered ui_result_profs" id="ui_res_accordion_prof11">
-                            <div class="card-header" id="ui_res_prof11_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                  data-target="#ui_res_prof11" aria-expanded="false" aria-controls="ui_res_prof11">
-                                  Видеограф
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof11" class="collapse" aria-labelledby="ui_res_prof11_head" data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="card z-depth-0 bordered ui_result_profs" id="ui_res_accordion_prof12">
-                            <div class="card-header" id="ui_res_prof12_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                  data-target="#ui_res_prof12" aria-expanded="false" aria-controls="ui_res_prof12">
-                                  Создатель рекламных макетов
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof12" class="collapse" aria-labelledby="ui_res_prof12_head" data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="card z-depth-0 bordered ui_result_profs" id="ui_res_accordion_prof13">
-                            <div class="card-header" id="ui_res_prof13_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                  data-target="#ui_res_prof13" aria-expanded="false" aria-controls="ui_res_prof13">
-                                  Разработчик контент-плана
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof13" class="collapse" aria-labelledby="ui_res_prof13_head" data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="card z-depth-0 bordered ui_result_profs" id="ui_res_accordion_prof14">
-                            <div class="card-header" id="ui_res_prof14_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                  data-target="#ui_res_prof14" aria-expanded="false" aria-controls="ui_res_prof14">
-                                  Продюсер блогера
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof14" class="collapse" aria-labelledby="ui_res_prof14_head" data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="card z-depth-0 bordered ui_result_profs" id="ui_res_accordion_prof15">
-                            <div class="card-header" id="ui_res_prof15_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                  data-target="#ui_res_prof15" aria-expanded="false" aria-controls="ui_res_prof15">
-                                  Иллюстратор
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof15" class="collapse" aria-labelledby="ui_res_prof15_head" data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="card z-depth-0 bordered ui_result_profs" id="ui_res_accordion_prof16">
-                            <div class="card-header" id="ui_res_prof16_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                  data-target="#ui_res_prof16" aria-expanded="false" aria-controls="ui_res_prof16">
-                                  Создатель масок
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof16" class="collapse" aria-labelledby="ui_res_prof16_head" data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="card z-depth-0 bordered ui_result_profs" id="ui_res_accordion_prof17">
-                            <div class="card-header" id="ui_res_prof17_head">
-                              <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                  data-target="#ui_res_prof17" aria-expanded="false" aria-controls="ui_res_prof17">
-                                  Личный ассистент по всем делам
-                                </button>
-                              </h5>
-                            </div>
-                            <div id="ui_res_prof17" class="collapse" aria-labelledby="ui_res_prof17_head" data-parent="#ui_result_profs">
-                              <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                              </div>
-                            </div>
-                          </div>
-
-
+                    <div class="container">
+                      <div class="row">
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q1" prof_q="p1"><label class="custom-control-label" for="p1_q1">ответы на комментарии и директ</label>
                         </div>
-                      </div> 
+                        <div class="col-sm-auto"></div>
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q2" prof_q="p1"><label class="custom-control-label" for="p1_q2">составление фото ленты для профилей</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q3" prof_q="p1"><label class="custom-control-label" for="p1_q3">написание текстов, копирайтинг</label>
+                        </div>
+                        <div class="col-sm-auto"></div>
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q4" prof_q="p1"><label class="custom-control-label" for="p1_q4">создание иллюстраций</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q5" prof_q="p1"><label class="custom-control-label" for="p1_q5">составление контент-план профиля</label>
+                        </div>
+                        <div class="col-sm-auto"></div>
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q6" prof_q="p1"><label class="custom-control-label" for="p1_q6">монтаж видео</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q7" prof_q="p1"><label class="custom-control-label" for="p1_q7">закупка рекламы, контроль выхода</label>
+                        </div>
+                        <div class="col-sm-auto"></div>
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q8" prof_q="p1"><label class="custom-control-label" for="p1_q8">создание макетов для рекламы</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q9" prof_q="p1"><label class="custom-control-label" for="p1_q9">создание стратегии продвижения профиля и ее реализация</label>
+                        </div>
+                        <div class="col-sm-auto"></div>
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q10" prof_q="p1"><label class="custom-control-label" for="p1_q10">помощь с организацией фотосессии</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q11" prof_q="p1"><label class="custom-control-label" for="p1_q11">организация марафонов и giveaway</label>
+                        </div>
+                        <div class="col-sm-auto"></div>
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q12" prof_q="p1"><label class="custom-control-label" for="p1_q12">создание Instagram масок</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q13" prof_q="p1"><label class="custom-control-label" for="p1_q13">дизайн сайтов и методичек</label>
+                        </div>
+                        <div class="col-sm-auto"></div>
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q14" prof_q="p1"><label class="custom-control-label" for="p1_q14">продюсирование блогера</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q15" prof_q="p1"><label class="custom-control-label" for="p1_q15">производитель фотоконтента</label>
+                        </div>
+                        <div class="col-sm-auto"></div>
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q16" prof_q="p1"><label class="custom-control-label" for="p1_q16">разбор Instagram профилей</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q17" prof_q="p1"><label class="custom-control-label" for="p1_q17">техническая поддержка блога и инфобизнеса</label>
+                        </div>
+                        <div class="col-sm-auto"></div>
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q18" prof_q="p1"><label class="custom-control-label" for="p1_q18">создание креативных stories</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p1_q19" prof_q="p1"><label class="custom-control-label" for="p1_q19">редактирование текстов</label>
+                        </div>
+                        <div class="col-sm-auto"></div>
+                        <div class="col"></div>
+                      </div>
+
+                    </div>
+                    
+   
                   </p>
                 </div>
               </div>
             </div>
 
-            <div class="col s12 m6 ui_pages" id="ui_page1" style="display: none">
-              <div class="card">
+            <div class="col text-center s12 m6 ui_pages" id="ui_page2" style="display: none">
+              <div class="card shadow-none">
                 <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text">     
+                  <h5 class="card-title">Сколько времени вы готовы уделять работе?</h5>
+                  <h5 class="card-subtitle mb-2 text-muted" style="padding-top: 2%;">Помните, что работа в Instagram дарит вам гибкий график и свободу передвижений:</h5>
+                  <p class="card-text" style="padding-top: 5%;">
+                    <div id="ui_slider_1"></div>
                   </p>
-                  <button type="button" class="btn btn-primary ui_test_next" ui_next_b="1">Далее</button>
                 </div>
               </div>
             </div>
 
-            <div class="col s12 m6 ui_pages" id="ui_page2" style="display: none">
-              <div class="card">
+            <div class="col text-center s12 m6 ui_pages" id="ui_page3" style="display: none">
+              <div class="card shadow-none">
                 <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text"> 
+                  <h5 class="card-title">Есть ли у вас опыт, хорошие отзывы или портфолио?</h5>
+                  <h5 class="card-subtitle mb-2 text-muted" style="padding-top: 2%;">Если да, то поставьте галочку.</h5>
+                  <p class="card-text" style="padding-top: 5%;">
+                    <div class="row">
+                      <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p3_q1" prof_q="p1"><label class="custom-control-label" for="p3_q1">Да</label>
+                      </div>
+                      <div class="col-sm-auto"></div>
+                      <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
+                          <input type="checkbox" class="custom-control-input" id="p3_q2" prof_q="p1"><label class="custom-control-label" for="p3_q2">Нет</label>
+                      </div>
+                    </div>
                   </p>
-                   <button type="button" class="btn btn-primary ui_test_prev" ui_prev_b="2">Назад</button>
-                    <button type="button" class="btn btn-primary ui_test_next" ui_next_b="2">Далее</button>  
                 </div>
               </div>
             </div>
 
-            <div class="col s12 m6 ui_pages" id="ui_page3" style="display: none">
-              <div class="card">
+            <div class="col text-center s12 m6 ui_pages" id="ui_page4" style="display: none">
+              <div class="card shadow-none">
                 <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text">  
+                  <h5 class="card-title">Сколько проектов вы готовы вести?</h5>
+                  <h5 class="card-subtitle mb-2 text-muted" style="padding-top: 2%;">Instagram помощник может работать с одним блогером, а может совмещать несколько. Кстати, ваши компетенции будут нужны аккаунтам студий, школ, магазинов.<br>
+                  Выберите комфортное количество проектов:</h5>
+                  <p class="card-text" style="padding-top: 5%;">   
+                    <div id="ui_slider_2"></div>
                   </p>
-                  <button type="button" class="btn btn-primary ui_test_prev" ui_prev_b="3">Назад</button>
-                  <button type="button" class="btn btn-primary ui_test_next" ui_next_b="3">Далее</button> 
                 </div>
               </div>
             </div>
 
-            <div class="col s12 m6 ui_pages" id="ui_page4" style="display: none">
-              <div class="card">
-                <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text">   
-                  </p>
-                  <button type="button" class="btn btn-primary ui_test_prev" ui_prev_b="4">Назад</button>
-                  <button type="button" class="btn btn-primary ui_test_next" ui_next_b="4">Далее</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s12 m6 ui_pages" id="ui_page5" style="display: none">
-              <div class="card">
-                <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text">
-                  </p>
-                  <button type="button" class="btn btn-primary ui_test_prev" ui_prev_b="5">Назад</button>
-                  <button type="button" class="btn btn-primary ui_test_next" ui_next_b="5">Далее</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s12 m6 ui_pages" id="ui_page6" style="display: none">
-              <div class="card">
-                <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text">   
-                  </p>
-                  <button type="button" class="btn btn-primary ui_test_prev" ui_prev_b="6">Назад</button>
-                  <button type="button" class="btn btn-primary ui_test_next" ui_next_b="6">Далее</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s12 m6 ui_pages" id="ui_page7" style="display: none">
-              <div class="card">
-                <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text"> 
-                  </p>
-                  <button type="button" class="btn btn-primary ui_test_prev" ui_prev_b="7">Назад</button>
-                  <button type="button" class="btn btn-primary ui_test_next" ui_next_b="7">Далее</button>  
-                </div>
-              </div>
-            </div>
-
-            <div class="col s12 m6 ui_pages" id="ui_page8" style="display: none">
-              <div class="card">
-                <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text">  
-                  </p>
-                  <button type="button" class="btn btn-primary ui_test_prev" ui_prev_b="8">Назад</button>
-                  <button type="button" class="btn btn-primary ui_test_next" ui_next_b="8">Далее</button> 
-                </div>
-              </div>
-            </div>
-
-            <div class="col s12 m6 ui_pages" id="ui_page9" style="display: none">
-              <div class="card">
-                <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text">  
-                  </p>
-                  <button type="button" class="btn btn-primary ui_test_prev" ui_prev_b="9">Назад</button>
-                  <button type="button" class="btn btn-primary ui_test_next" ui_next_b="9">Далее</button> 
-                </div>
-              </div>
-            </div>
-
-            <div class="col s12 m6 ui_pages" id="ui_page10" style="display: none">
-              <div class="card">
-                <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text">  
-                  </p>
-                  <button type="button" class="btn btn-primary ui_test_prev" ui_prev_b="10">Назад</button>
-                  <button type="button" class="btn btn-primary ui_test_next" ui_next_b="10">Далее</button> 
-                </div>
-              </div>
-            </div>
-
-            <div class="col s12 m6 ui_pages" id="ui_page11" style="display: none">
-              <div class="card">
-                <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text">   
-                  </p>
-                  <button type="button" class="btn btn-primary ui_test_prev" ui_prev_b="11">Назад</button>
-                  <button type="button" class="btn btn-primary ui_test_next" ui_next_b="11">Далее</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s12 m6 ui_pages" id="ui_page12" style="display: none">
-              <div class="card">
-                <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text">  
-                  </p>
-                  <button type="button" class="btn btn-primary ui_test_prev" ui_prev_b="12">Назад</button>
-                  <button type="button" class="btn btn-primary ui_test_next" ui_next_b="12">Далее</button> 
-                </div>
-              </div>
-            </div>
-
-            <div class="col s12 m6 ui_pages" id="ui_page13" style="display: none">
-              <div class="card">
-                <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text">   
-                  </p>
-                  <button type="button" class="btn btn-primary ui_test_prev" ui_prev_b="13">Назад</button>
-                  <button type="button" class="btn btn-primary ui_test_next" ui_next_b="13">Далее</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s12 m6 ui_pages" id="ui_page14" style="display: none">
-              <div class="card">
-                <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text">   
-                  </p>
-                  <button type="button" class="btn btn-primary ui_test_prev" ui_prev_b="14">Назад</button>
-                  <button type="button" class="btn btn-primary ui_test_next" ui_next_b="14">Далее</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s12 m6 ui_pages" id="ui_page15" style="display: none">
-              <div class="card">
-                <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text">   
-                  </p>
-                  <button type="button" class="btn btn-primary ui_test_prev" ui_prev_b="15">Назад</button>
-                  <button type="button" class="btn btn-primary ui_test_next" ui_next_b="15">Далее</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s12 m6 ui_pages" id="ui_page16" style="display: none">
-              <div class="card">
-                <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text">  
-                  </p>
-                  <button type="button" class="btn btn-primary ui_test_prev" ui_prev_b="16">Назад</button>
-                  <button type="button" class="btn btn-primary ui_test_next" ui_next_b="16">Далее</button> 
-                </div>
-              </div>
-            </div>
-
-            <div class="col s12 m6 ui_pages" id="ui_page17" style="display: none">
-              <div class="card">
-                <div class="card-body">
-                  <span class="card-title"><b>Выберите правильные утверждения о вас</b></span>
-                  <p class="card-text">   
-                  </p>
-                  <button type="button" class="btn btn-primary ui_test_prev" ui_prev_b="17">Назад</button>
-                  <button type="button" class="btn btn-primary ui_test_next" ui_next_b="17">Готово</button>
-                </div>
-              </div>
-            </div>
-
-
-
+          
           </div>
-          <nav id="ui_pagination" style="padding-top: 10px; display: none">
-            <ul class="pagination pg-blue">
-              <li class="page-item active"><a class="page-link" id="ui_nav_page1">1</a></li>
-              <li class="page-item"><a class="page-link" id="ui_nav_page2">2</a></li>
-              <li class="page-item"><a class="page-link" id="ui_nav_page3">3</a></li>
-              <li class="page-item"><a class="page-link" id="ui_nav_page4">4</a></li>
-              <li class="page-item"><a class="page-link" id="ui_nav_page5">5</a></li>
-              <li class="page-item"><a class="page-link" id="ui_nav_page6">6</a></li>
-              <li class="page-item"><a class="page-link" id="ui_nav_page7">7</a></li>
-              <li class="page-item"><a class="page-link" id="ui_nav_page8">8</a></li>
-              <li class="page-item"><a class="page-link" id="ui_nav_page9">9</a></li>
-              <li class="page-item"><a class="page-link" id="ui_nav_page10">10</a></li>
-              <li class="page-item"><a class="page-link" id="ui_nav_page11">11</a></li>
-              <li class="page-item"><a class="page-link" id="ui_nav_page12">12</a></li>
-              <li class="page-item"><a class="page-link" id="ui_nav_page13">13</a></li>
-              <li class="page-item"><a class="page-link" id="ui_nav_page14">14</a></li>
-              <li class="page-item"><a class="page-link" id="ui_nav_page15">15</a></li>
-              <li class="page-item"><a class="page-link" id="ui_nav_page16">16</a></li>
-              <li class="page-item"><a class="page-link" id="ui_nav_page17">17</a></li>
-            </ul>
-          </nav>   
-    </div>
 
-    
+          <div class="row" id="ui_pagination" style="display: none; padding-left: 35px;padding-right: 35px;">
+            <div class="align-items-center d-flex" style="width: 250px;">
+              <div style="width: 100px;">
+                Готово: 
+                <span><b id="ui_progress_procents">0%</b></span>
+              </div>
+              <div class="progress" style="height: 5px;width: 150px;">
+                <div id="ui_progress" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="align-items-center col d-flex">
+              <button type="button" class="btn btn-test ui_test_prev" style="margin-top: 0px;"><i class="fa fa-chevron-left"></i></button>
+              <button type="button" class="btn btn-test ui_test_next" style="margin-top: 0px;">Далее</button>
+              <button type="button" class="btn btn-test ui_test_next_finish" style="margin-top: 0px;display: none">Узнать свой доход</button>
+            </div>
+          </div>
+    </div>
          
     </div>
 
-    <!-- JQuery -->
+  <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center ui_msg_box_hide">
+    <div id="ui_msg_quest" class="toast ui_msg_box_hide" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+      <div class="toast-header">
+        <strong class="mr-auto">Сообщение</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="toast-body">
+        Вы не выбрали ни одного варианта. Если вам не подошло ни одно утверждение, закройте это сообщение и нажмите «ДАЛЕЕ»
+      </div>
+    </div>
+  </div>
+
+  <div id="ui_back" style="display: none;">
+  </div>
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/js/mdb.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nouislider@14.1.1/distribute/nouislider.min.js"></script>
+
      <script type="text/javascript">
       var dtime_start = new Date();
+      var drepeate=false;
+      var nrepeate=0;
+      var dcur_page=1;
+
       function f_ui_init()
       {
           $(".ui_pages").hide();
           $("#ui_page_start").show();
+
+          $('#ui_msg_quest').on('hide.bs.toast', function () 
+          {
+            $("#ui_back").removeClass("ui_back");
+            $("#ui_back").hide();
+            $("#ui_back").perent().addClass("ui_msg_box_hide");
+            $("#ui_back").addClass("ui_msg_box_hide");
+          })
+          $('#ui_msg_quest').on('show.bs.toast', function () 
+          {
+            $("#ui_back").show();
+            $("#ui_back").addClass("ui_back");
+            $("#ui_back").parent().removeClass("ui_msg_box_hide");
+            $("#ui_back").removeClass("ui_msg_box_hide");
+          })
         
           $(document).on("click","#ui_start_test",function(event)
           {
             $("#ui_page_start").hide();
             $("#ui_pagination").show();
+            $("#ui_pagination").addClass("d-flex flex-wrap justify-content-center");
             $("#ui_page1").show();
+
+            if(dcur_page==1)
+            {
+              $(".ui_test_prev").hide();
+            }
+          });
+          $(document).on("click",".ui_test_next_finish",function(event)
+          {
+            var t=dcur_page;
+            $("#ui_msg_quest").toast("hide");
+            $("#ui_page"+t.toString()).hide();
+            $("#ui_pagination").removeClass("d-flex flex-wrap justify-content-center");
+            $("#ui_pagination").hide();
+            $(".ui_pages").hide();
+            $("#ui_page_result").show();
+            $(".ui_result_profs").hide();
+            f_result_init(); 
           });
 
           $(document).on("click",".ui_test_next",function(event)
           {
-            var t=parseInt($(this).attr("ui_next_b"));
-            $("#ui_page"+t.toString()).hide();
-            
-            if(t==17)
-            {
-              $("#ui_pagination").hide();
-              $(".ui_pages").hide();
-              $("#ui_page_result").show();
-              $(".ui_result_profs").hide();
-              f_result_init();
+            var t=dcur_page;
+              f_show_msg("ui_page"+(t).toString());
+              if(drepeate==true)
+              {
+                $("#ui_page"+t.toString()).hide();
+                $("#ui_page"+(t+1).toString()).show();
+                $("#ui_pagination .page-item").removeClass("active");
+                $("#ui_pagination .page-item a[page='ui_page"+(t+1).toString()+"']").parent().addClass("active");
+                drepeate=false;
+                nrepeate=0;
 
-              var dtime = new Date();
-              $("#ui_datetime_end").append(dtime.toLocaleString());
+                dcur_page=dcur_page+1;
+                
+                var tn=parseInt($("#ui_progress").attr("aria-valuenow"))+25;
+                $("#ui_progress").attr("aria-valuenow",tn.toString());
+                $("#ui_progress").width(tn.toString()+"%");
+                $("#ui_progress_procents").empty().append(tn.toString()+"%");
 
-              var now = moment(dtime);
-              var end = moment(dtime_start);
-              var duration = moment.duration(now.diff(end));
-            
-              $("#ui_time_test").append(duration.hours()+":"+ duration.minutes()+":"+ duration.seconds());
-            }
-            else
-            {
-              $("#ui_page"+(t+1).toString()).show();
-              $("#ui_pagination .page-item").removeClass("active");
-              $("#ui_nav_page"+(t+1).toString()).parent().addClass("active");
-            }
+                if(dcur_page==1)
+                {
+                  $(".ui_test_prev").hide();
+                }
+                else
+                {
+                  $(".ui_test_prev").show();
+                }
+
+                if(dcur_page==4)
+                {
+                  $(".ui_test_next_finish").show();
+                  $(".ui_test_next").hide();
+                }
+                else
+                {
+                  $(".ui_test_next").show();
+                  $(".ui_test_next_finish").hide();
+                }
+              }
           });
+
+
 
           $(document).on("click",".ui_test_prev",function(event)
           {
-            var t=parseInt($(this).attr("ui_prev_b"));
+            var t=dcur_page;
             if(t>=1 && t-1!=0)
             {
               $("#ui_page"+t.toString()).hide();
               $("#ui_page"+(t-1).toString()).show();
               $("#ui_pagination .page-item").removeClass("active");
-              $("#ui_nav_page"+(t-1).toString()).parent().addClass("active");
+              $("#ui_pagination .page-item a[page='ui_page"+(t-1).toString()+"']").parent().addClass("active");
+
+              
+              var tn=parseInt($("#ui_progress").attr("aria-valuenow"))-25;
+              $("#ui_progress").attr("aria-valuenow",tn.toString());
+              $("#ui_progress").width(tn.toString()+"%");
+              $("#ui_progress_procents").empty().append(tn.toString()+"%");
+              dcur_page=dcur_page-1;
+
+              if(dcur_page==1)
+              {
+                $(".ui_test_prev").hide();
+              }
+              else
+              {
+                $(".ui_test_prev").show();
+              }
+              if(dcur_page==4)
+              {
+                $(".ui_test_next_finish").show();
+                $(".ui_test_next").hide();
+              }
+              else
+              {
+                $(".ui_test_next").show();
+                $(".ui_test_next_finish").hide();
+              }
+            } 
+          });
+
+          $(document).on("change","#p3_q1",function(event)
+          {
+            if(this.checked)
+            {
+              $("#p3_q2").prop("checked",false);
             }
           });
+          $(document).on("change","#p3_q2",function(event)
+          {
+            if(this.checked)
+            {
+              $("#p3_q1").prop("checked",false);
+            }
+          });
+
+          $(document).on("click","#ui_to_main_study",function(event)
+          {
+            window.open("https://webinar.lebedeva-blog.ru/instahelper");
+          });
+
       };
+
+        function f_init_sliders()
+        {
+          var ui_slider_1 = document.getElementById("ui_slider_1");
+          noUiSlider.create(ui_slider_1, {
+              start: [1,8],
+              step: 1,
+              range: {
+                  'min': 1,
+                  'max': 8
+              },
+              connect: true,
+              pips: {
+                  mode: 'steps',
+                  density: 10
+              }
+          });
+          var ui_slider_2 = document.getElementById("ui_slider_2");
+          noUiSlider.create(ui_slider_2, {
+              start: [1,8],
+              step: 1,
+              range: {
+                  'min': 1,
+                  'max': 8
+              },
+              connect: true,
+              pips: {
+                  mode: 'steps',
+                  density: 10
+              }
+          });
+          $(".noUi-marker-sub").removeClass("noUi-marker-sub").addClass("noUi-marker-large");
+          $(".noUi-value-sub").removeClass("noUi-value-sub").addClass("noUi-value-large");
+        };
 
         $(document).ready(function() 
         {
-          f_ini_quests();
           f_ui_init();  
-               
+          f_init_sliders();             
         });
 
         function f_result_init()
         {
-          var dres=[17];
+          var dres_arr_q1=[30,20,30,45,15,40,20,20,50,30,50,30,40,100,60,20,30,20];
+          var dres_q1=0;
+
           for (var i = 1; i < 18; i++) 
           {
-            dres[i]=$("input[prof_q='p"+i.toString()+"']:checked").length;   
-          }
-          dres.sort(function(a, b) 
-          {
-            return a - b;
-          });
-
-          //console.log(dres);
-          for (var i = 1; i < dres.length; i++) 
-          {
-            //console.log(dres[i]+' '+i);
-            if(dres[i]>=2)
+            if($("#p1_q"+i.toString()).is(":checked")==true)
             {
-              $("#ui_res_accordion_prof"+(i).toString()).show();
-              //console.log("#ui_res_accordion_prof"+(i).toString());
+              dres_q1=dres_q1+dres_arr_q1[i-1];
+            }   
+          };
+          dres_q1=dres_q1*1000;
+          console.log("<---res q1="+dres_q1);
+
+          var dres_arr_q2=ui_slider_1.noUiSlider.get();
+          console.log("<--res q2 pred=",dres_arr_q2);
+         
+          if(dres_arr_q2[0]==1 || dres_arr_q2[0]==2 || dres_arr_q2[0]==3
+            || dres_arr_q2[1]==1 || dres_arr_q2[1]==2 || dres_arr_q2[1]==3)
+          {
+            dres_q1=dres_q1*0.4;
+          }
+
+          if(dres_arr_q2[0]==4 || dres_arr_q2[0]==5
+            || dres_arr_q2[1]==4 || dres_arr_q2[1]==5)
+          {
+            dres_q1=dres_q1*0.7;
+          }
+
+          if(dres_arr_q2[0]==6 || dres_arr_q2[0]==7 || dres_arr_q2[0]==8
+            || dres_arr_q2[1]==6 || dres_arr_q2[1]==7 || dres_arr_q2[1]==8)
+          {
+            dres_q1=dres_q1*1;
+          }
+          console.log("<-- res q2="+dres_q1);
+
+          if($("#p3_q1").is(":checked")==true)
+          {
+            dres_q1=dres_q1*1.3;
+          }
+          console.log("<-- res q3="+dres_q1);
+
+          var dres_arr_q4=ui_slider_2.noUiSlider.get();
+          console.log("<--res q2 pred=",dres_arr_q4);
+
+          if(dres_arr_q4[0]==1 || dres_arr_q4[1]==1 )
+          {
+            dres_q1=dres_q1*1;
+          }
+          if(dres_arr_q4[0]==2 || dres_arr_q4[1]==2 )
+          {
+            dres_q1=dres_q1*2;
+          }
+          if(dres_arr_q4[0]==3 || dres_arr_q4[1]==3 )
+          {
+            dres_q1=dres_q1*3;
+          }
+          if(dres_arr_q4[0]==4 || dres_arr_q4[1]==4 )
+          {
+            dres_q1=dres_q1*4;
+          }
+          if(dres_arr_q4[0]==5 || dres_arr_q4[1]==5 )
+          {
+            dres_q1=dres_q1*5;
+          }
+          if(dres_arr_q4[0]==6 || dres_arr_q4[1]==6 )
+          {
+            dres_q1=dres_q1*6;
+          }
+          if(dres_arr_q4[0]==7 || dres_arr_q4[1]==7 )
+          {
+            dres_q1=dres_q1*7;
+          }
+          if(dres_arr_q4[0]==8 || dres_arr_q4[1]==8 )
+          {
+            dres_q1=dres_q1*8;
+          }
+          console.log("<-- res="+dres_q1);
+          $("#ui_result_sum").empty();
+          $("#ui_result_sum").append(dres_q1.toString());
+        };
+
+        function f_show_msg(did_page) 
+        {
+          console.log(dcur_page);
+          if(dcur_page==1)
+          {
+            if($("#"+did_page+" input:checked").length==0 && nrepeate==0)
+            {
+              $("#ui_msg_quest").addClass("ui_msg_quest");
+              $("#ui_msg_quest").toast("show");
+              nrepeate=1;
+            }
+            else
+            {
+              drepeate=true;
             }
           }
-        };
-
-        function getRandomInt(max) {
-          return Math.floor(Math.random() * Math.floor(max));
-        }
-
-        function f_ini_quests()
-        {
-          var dt=[];
-          var delems=[];
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q1_v1" prof_q="p1"><label class="custom-control-label" for="q1_v1">Вам нравится писать тексты</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q1_v2" prof_q="p1"><label class="custom-control-label" for="q1_v2">В школе у вас получались хорошие сочинения</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q1_v3" prof_q="p1"><label class="custom-control-label" for="q1_v3">Вы хорошо знаете свой язык и грамотно пишите</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q1_v4" prof_q="p1"><label class="custom-control-label" for="q1_v4">Вы умеете структурировать свои мысли и понятно их излагать</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q1_v5" prof_q="p1"><label class="custom-control-label" for="q1_v5">Понимаете разницу между коротким “-” дефисом и длинным “–” тире</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q1_v6" prof_q="p1"><label class="custom-control-label" for="q1_v6">Вы знаете, как правильно разделять текст на абцазы</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q2_v1" prof_q="p2"><label class="custom-control-label" for="q2_v1">Вы эстет</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q2_v2" prof_q="p2"><label class="custom-control-label" for="q2_v2">Вам важно, чтобы ваш образ гармонично смотрелся: одежда, аксессуары, обувь дополняли друг друга</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q2_v3" prof_q="p2"><label class="custom-control-label" for="q2_v3">Вам нравится полистать красивые журналы, эстетичные профили</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q2_v4" prof_q="p2"><label class="custom-control-label" for="q2_v4">Обычно вы ходите в стильные, красивые заведения, кафе</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q2_v5" prof_q="p2"><label class="custom-control-label" for="q2_v5">Вы творческий человек со своим видением обыденных вещей</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q2_v6" prof_q="p2"><label class="custom-control-label" for="q2_v6">Вы любите, чтобы все было красиво</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q3_v1" prof_q="p3"><label class="custom-control-label" for="q3_v1">Вы обожаете смотреть stories</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q3_v2" prof_q="p3"><label class="custom-control-label" for="q3_v2">Вы умеете классно рассказывать истории и делиться впечатлениями</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q3_v3" prof_q="p3"><label class="custom-control-label" for="q3_v3">Умеете из ничего создать целую историю</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q3_v4" prof_q="p3"><label class="custom-control-label" for="q3_v4">У вас богатая фантазия</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q3_v5" prof_q="p3"><label class="custom-control-label" for="q3_v5">Умеете и любите интриговать</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q3_v6" prof_q="p3"><label class="custom-control-label" for="q3_v6">Вы сильны в оформлении, создании креативов</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q4_v1" prof_q="p4"><label class="custom-control-label" for="q4_v1">Вы часто наблюдаете за подачей рекламы других блогеров</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q4_v2" prof_q="p4"><label class="custom-control-label" for="q4_v2">В вас сочетаются терпение и настойчивость</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q4_v3" prof_q="p4"><label class="custom-control-label" for="q4_v3">Когда вам говорят “нет” или вообще не отвечают, это не демотивирует вас</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q4_v4" prof_q="p4"><label class="custom-control-label" for="q4_v4">Вы сильны в ведении переговоров, умеете договариваться</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q4_v5" prof_q="p4"><label class="custom-control-label" for="q4_v5">Вы хорошо распределяете финансы</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q4_v6" prof_q="p4"><label class="custom-control-label" for="q4_v6">Знаете, как анализировать и выявлять целевую аудиторию</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q5_v1" prof_q="p5"><label class="custom-control-label" for="q5_v1">Вы можете долго выполнять одни и те же действия абсолютно спокойно</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q5_v2" prof_q="p5"><label class="custom-control-label" for="q5_v2">Вам нравится общаться с людьми</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q5_v3" prof_q="p5"><label class="custom-control-label" for="q5_v3">Рутина не расстраивает вас</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q5_v4" prof_q="p5"><label class="custom-control-label" for="q5_v4">Вам важна стабильность в работе и ваших задачах</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q5_v5" prof_q="p5"><label class="custom-control-label" for="q5_v5">Вы любите помогать другим людям</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q5_v6" prof_q="p5"><label class="custom-control-label" for="q5_v6">Умеете работать с негативом и хейтом</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q6_v1" prof_q="p6"><label class="custom-control-label" for="q6_v1">Вы мыслите стратегически</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q6_v2" prof_q="p6"><label class="custom-control-label" for="q6_v2">Знаете платные и бесплатные методы продвижения аккаунта</label>');
-
-          delems.push(' <input type="checkbox" class="custom-control-input" id="q6_v3" prof_q="p6"><label class="custom-control-label" for="q6_v3">Готовы работать с несколькими заказчиками параллельно</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q6_v4" prof_q="p6"><label class="custom-control-label" for="q6_v4">Вы способны брать ответственность на себя за результат своих действий</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q6_v5" prof_q="p6"><label class="custom-control-label" for="q6_v5">Вам нравится делать все задачи “под ключ”, охватывая весь комплекс мероприятий</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q6_v6" prof_q="p6"><label class="custom-control-label" for="q6_v6">Легко переключаетесь с одной задачи на другую</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q7_v1" prof_q="p7"><label class="custom-control-label" for="q7_v1">Вы хорошо монтируете видео</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q7_v2" prof_q="p7"><label class="custom-control-label" for="q7_v2">Умеете работать с видео редакторами или хотели бы обучиться работе с ними</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q7_v3" prof_q="p7"><label class="custom-control-label" for="q7_v3">Понимаете, где и как лучше обрезать видео, какие части соединить</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q7_v4" prof_q="p7"><label class="custom-control-label" for="q7_v4">Можете смотреть интересные видео часами</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q7_v5" prof_q="p7"><label class="custom-control-label" for="q7_v5">Вам знакомы слова «Time lapse» и «Slow motion» </label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q7_v6" prof_q="p7"><label class="custom-control-label" for="q7_v6">Хотели бы освоить обработку видео на телефоне</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q8_v1" prof_q="p8"><label class="custom-control-label" for="q8_v1">Любите взаимодействовать с большим количеством людей</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q8_v2" prof_q="p8"><label class="custom-control-label" for="q8_v2">Умеете устранять агрессию и недовольство</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q8_v3" prof_q="p8"><label class="custom-control-label" for="q8_v3">Вы очень стрессоустойчивый человек</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q8_v4" prof_q="p8"><label class="custom-control-label" for="q8_v4">Вам говорят “да”, даже когда другим говорят “нет”</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q8_v5" prof_q="p8"><label class="custom-control-label" for="q8_v5">Вы очень ответственный человек</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q8_v6" prof_q="p8"><label class="custom-control-label" for="q8_v6">Вы способны гарантировать результат своей работы или вернуть деньги за нее</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q9_v1" prof_q="p9"><label class="custom-control-label" for="q9_v1">Вы следите за актуальными трендами рекламы</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q9_v2" prof_q="p9"><label class="custom-control-label" for="q9_v2">Отдаете предпочтение новым креативным решениям, а не старым проверенным методам</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q9_v3" prof_q="p9"><label class="custom-control-label" for="q9_v3">Все время ищите разные методы продвижения</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q9_v4" prof_q="p9"><label class="custom-control-label" for="q9_v4">Можете продумать стратегию раскрутки бренда с нуля</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q9_v5" prof_q="p9"><label class="custom-control-label" for="q9_v5">Вы хорошо анализируете рынок, конкурентов, аудиторию</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q9_v6" prof_q="p9"><label class="custom-control-label" for="q9_v6">Вы можете определить спрос и подстроиться под него</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q10_v1" prof_q="p10"><label class="custom-control-label" for="q10_v1">Друзья часто говорят, что вы делаете потрясающие фотографии</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q10_v2" prof_q="p10"><label class="custom-control-label" for="q10_v2">Любите фотографировать</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q10_v3" prof_q="p10"><label class="custom-control-label" for="q10_v3">Считаете, что фото лучше, чем видео</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q10_v4" prof_q="p10"><label class="custom-control-label" for="q10_v4">Порой смотрите на мир как будто через объектив фотоаппарата</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q10_v5" prof_q="p10"><label class="custom-control-label" for="q10_v5">Видите выгодные ракурсы</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q10_v6" prof_q="p10"><label class="custom-control-label" for="q10_v6">Знаете азы композиции и выставления света</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q11_v1" prof_q="p11"><label class="custom-control-label" for="q11_v1">Хотели бы снимать кино</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q11_v2" prof_q="p11"><label class="custom-control-label" for="q11_v2">Считаете, что видео лучше, чем фото</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q11_v3" prof_q="p11"><label class="custom-control-label" for="q11_v3">Часто думаете, как можно было бы красиво заснять лучшие моменты в видео формате</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q11_v4" prof_q="p11"><label class="custom-control-label" for="q11_v4">Умеете подбирать выгодные ракурсы для видео</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q11_v5" prof_q="p11"><label class="custom-control-label" for="q11_v5">Хотите научиться снимать крутые видео на телефон</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q11_v6" prof_q="p11"><label class="custom-control-label" for="q11_v6">Часто снимаете видео на телефон или камеру</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q12_v1" prof_q="p12"><label class="custom-control-label" for="q12_v1">Знаете, что именно интересно смотреть людям</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q12_v2" prof_q="p12"><label class="custom-control-label" for="q12_v2">Умеете заинтересовать собеседника</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q12_v3" prof_q="p12"><label class="custom-control-label" for="q12_v3">Вы можете сделать “хайп” даже из обычной истории</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q12_v4" prof_q="p12"><label class="custom-control-label" for="q12_v4">Вам интересен монтаж видео и новые приложения по обработке</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q12_v5" prof_q="p12"><label class="custom-control-label" for="q12_v5">Вы можете быстро написать сценарий для рекламного ролика</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q12_v6" prof_q="p12"><label class="custom-control-label" for="q12_v6">Следите за трендами рекламы, всегда стараетесь быть “на волне”</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q13_v1" prof_q="p13"><label class="custom-control-label" for="q13_v1">Все планируете заранее</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q13_v2" prof_q="p13"><label class="custom-control-label" for="q13_v2">Перед тем, как что-то начать делать, составляете список задач</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q13_v3" prof_q="p13"><label class="custom-control-label" for="q13_v3">Вы легко придумываете темы для контента</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q13_v4" prof_q="p13"><label class="custom-control-label" for="q13_v4">Вы приручили свою музу, и у вас всегда есть идеи</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q13_v5" prof_q="p13"><label class="custom-control-label" for="q13_v5">Вы прекрасно структурируете информацию</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q13_v6" prof_q="p13"><label class="custom-control-label" for="q13_v6">Вы считаете себя креативным человеком</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q14_v1" prof_q="p14"><label class="custom-control-label" for="q14_v1">Предпочитаете быть “серым кардиналом”</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q14_v2" prof_q="p14"><label class="custom-control-label" for="q14_v2">Вам нравится руководить и управлять</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q14_v3" prof_q="p14"><label class="custom-control-label" for="q14_v3">Вы любите давать советы</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q14_v4" prof_q="p14"><label class="custom-control-label" for="q14_v4">Умеете находить общий язык с любым человеком</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q14_v5" prof_q="p14"><label class="custom-control-label" for="q14_v5">Умеете масштабно мыслить</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q14_v6" prof_q="p14"><label class="custom-control-label" for="q14_v6">Часто предложенные вами решения приносят большую пользу</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q15_v1" prof_q="p15"><label class="custom-control-label" for="q15_v1">Вы любите рисовать</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q15_v2" prof_q="p15"><label class="custom-control-label" for="q15_v2">Вы креативны, хорошо придумываете, мыслите образами</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q15_v3" prof_q="p15"><label class="custom-control-label" for="q15_v3">Увлекаетесь графическим дизайном</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q15_v4" prof_q="p15"><label class="custom-control-label" for="q15_v4">Вы бы хотели приобрести себе IPad с Apple Pencil, либо он у вас уже есть</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q15_v5" prof_q="p15"><label class="custom-control-label" for="q15_v5">Вы часто обращаете внимание на картинки на сайтах, рекламных материалах</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q15_v6" prof_q="p15"><label class="custom-control-label" for="q15_v6">В детстве вы хотели стать художником</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q16_v1" prof_q="p16"><label class="custom-control-label" for="q16_v1">Любите работать с 3D</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q16_v2" prof_q="p16"><label class="custom-control-label" for="q16_v2">Считаете, что любой человек может выглядеть лучше, чем сейчас</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q16_v3" prof_q="p16"><label class="custom-control-label" for="q16_v3">Хотели бы сделать окружающий мир немного ярче</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q16_v4" prof_q="p16"><label class="custom-control-label" for="q16_v4">Умеете писать скрипты</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q16_v5" prof_q="p16"><label class="custom-control-label" for="q16_v5">У вас инженерный склад ума</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q16_v6" prof_q="p16"><label class="custom-control-label" for="q16_v6">Обладаете навыками визуального программирования</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q17_v1" prof_q="p17"><label class="custom-control-label" for="q17_v1">Умеете выполнять непонятные задачи</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q17_v2" prof_q="p17"><label class="custom-control-label" for="q17_v2">Комфортно чувствуете себя в режиме многозадачности</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q17_v3" prof_q="p17"><label class="custom-control-label" for="q17_v3">Умеете быстро находить нужную информацию</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q17_v4" prof_q="p17"><label class="custom-control-label" for="q17_v4">Хотите быть ближе к любимому блогеру</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q17_v5" prof_q="p17"><label class="custom-control-label" for="q17_v5">Не боитесь бытовых дел и поручений</label>');
-
-          delems.push('<input type="checkbox" class="custom-control-input" id="q17_v6" prof_q="p17"><label class="custom-control-label" for="q17_v6">Вы всегда на связи</label>');
-          
-          for (var i = 0; i < 18; i++) 
+          else
           {
-            var n=0;
-            for (var j = 0; j < 6; j++) 
-            {
-              n=getRandomInt(102);
-              for (var ij = 0; ij < 512; ij++) 
-              {
-                if(dt.indexOf(n)!=-1 && dt!=[])
-                {
-                  n=getRandomInt(102);
-                }
-                else
-                {
-                  dt.push(n);
-                  break;
-                }
-              }
-              //console.log(n);
-              $("#ui_page"+(i+1).toString()+" .card .card-body .card-text").prepend(
-              '<div class="custom-control custom-checkbox">'+delems[n]+"</div>");
-            }       
+            drepeate=true;
           }
-          //console.log(dt); 
-        };
+        } 
+
+
     </script>
     
   </body>
