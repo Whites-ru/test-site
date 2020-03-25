@@ -21,6 +21,10 @@
       {
         text-align: left;
       }
+      #ui_pagination
+      {
+        padding-top: 2%;
+      }
 
       .btn-test
       {
@@ -96,6 +100,11 @@
       #ui_main_row
       {
         height: inherit;
+      }
+      .noUi-touch-area {
+        height: 100%;
+        width: 100%;
+        background-color: #411769!important;
       }
     </style>
     
@@ -286,7 +295,7 @@
           
           </div>
 
-          <div class="row" id="ui_pagination" style="display: none; padding-left: 35px;padding-right: 35px;">
+          <div class="row float-right" id="ui_pagination" style="display: none; padding-left: 35px;padding-right: 35px;">
             <div class="align-items-center d-flex" style="width: 250px;">
               <div style="width: 100px;">
                 Готово: 
@@ -489,7 +498,7 @@
         {
           var ui_slider_1 = document.getElementById("ui_slider_1");
           noUiSlider.create(ui_slider_1, {
-              start: [1,8],
+              start: [1],
               step: 1,
               range: {
                   'min': 1,
@@ -503,7 +512,7 @@
           });
           var ui_slider_2 = document.getElementById("ui_slider_2");
           noUiSlider.create(ui_slider_2, {
-              start: [1,8],
+              start: [1],
               step: 1,
               range: {
                   'min': 1,
@@ -538,79 +547,65 @@
             }   
           };
           dres_q1=dres_q1*1000;
-          console.log("<---res q1="+dres_q1);
 
           var dres_arr_q2=ui_slider_1.noUiSlider.get();
-          console.log("<--res q2 pred=",dres_arr_q2);
          
-          if(dres_arr_q2[0]==1 || dres_arr_q2[0]==2 || dres_arr_q2[0]==3
-            || dres_arr_q2[1]==1 || dres_arr_q2[1]==2 || dres_arr_q2[1]==3)
+          if(dres_arr_q2==1 || dres_arr_q2==2 || dres_arr_q2==3)
           {
             dres_q1=dres_q1*0.4;
           }
 
-          if(dres_arr_q2[0]==4 || dres_arr_q2[0]==5
-            || dres_arr_q2[1]==4 || dres_arr_q2[1]==5)
+          if(dres_arr_q2==4 || dres_arr_q2==5)
           {
             dres_q1=dres_q1*0.7;
           }
 
-          if(dres_arr_q2[0]==6 || dres_arr_q2[0]==7 || dres_arr_q2[0]==8
-            || dres_arr_q2[1]==6 || dres_arr_q2[1]==7 || dres_arr_q2[1]==8)
+          if(dres_arr_q2==6 || dres_arr_q2==7 || dres_arr_q2==8)
           {
             dres_q1=dres_q1*1;
           }
-          console.log("<-- res q2="+dres_q1);
 
           if($("#p3_q1").is(":checked")==true)
           {
             dres_q1=dres_q1*1.3;
           }
-          console.log("<-- res q3="+dres_q1);
 
           var dres_arr_q4=ui_slider_2.noUiSlider.get();
-          console.log("<--res q2 pred=",dres_arr_q4);
 
-          if(dres_arr_q4[0]==1 || dres_arr_q4[1]==1 )
+          switch(parseInt(dres_arr_q4,10))
           {
-            dres_q1=dres_q1*1;
+            case 1:
+              dres_q1=dres_q1*1;
+              break;
+            case 2:
+              dres_q1=dres_q1*2;
+              break;
+            case 3:
+              dres_q1=dres_q1*3;
+              break;
+            case 4:
+              dres_q1=dres_q1*4;
+              break;
+            case 5:
+              dres_q1=dres_q1*5;
+              break;
+            case 6:
+              dres_q1=dres_q1*6;
+              break;
+            case 7:
+              dres_q1=dres_q1*7;
+              break;
+            case 8:
+              dres_q1=dres_q1*8;
+              break;
           }
-          if(dres_arr_q4[0]==2 || dres_arr_q4[1]==2 )
-          {
-            dres_q1=dres_q1*2;
-          }
-          if(dres_arr_q4[0]==3 || dres_arr_q4[1]==3 )
-          {
-            dres_q1=dres_q1*3;
-          }
-          if(dres_arr_q4[0]==4 || dres_arr_q4[1]==4 )
-          {
-            dres_q1=dres_q1*4;
-          }
-          if(dres_arr_q4[0]==5 || dres_arr_q4[1]==5 )
-          {
-            dres_q1=dres_q1*5;
-          }
-          if(dres_arr_q4[0]==6 || dres_arr_q4[1]==6 )
-          {
-            dres_q1=dres_q1*6;
-          }
-          if(dres_arr_q4[0]==7 || dres_arr_q4[1]==7 )
-          {
-            dres_q1=dres_q1*7;
-          }
-          if(dres_arr_q4[0]==8 || dres_arr_q4[1]==8 )
-          {
-            dres_q1=dres_q1*8;
-          }
-          console.log("<-- res="+dres_q1);
+
           $("#ui_result_sum").empty();
           $("#ui_result_sum").append(dres_q1.toString());
         };
 
         function f_show_msg(did_page) 
         {
-          console.log(dcur_page);
           if(dcur_page==1)
           {
             if($("#"+did_page+" input:checked").length==0 && nrepeate==0)
