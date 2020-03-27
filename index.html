@@ -57,7 +57,7 @@
         top: 36%;
         z-index: 99999999;
         text-align: center;
-        left: 30%;
+        /*left: 30%;*/
       }
 
 
@@ -111,7 +111,7 @@
     </style>
     
   </head>
-    <body>
+    <body style="height: inherit;">
 
     <div class="container-fluid main_div">
         <div id="ui_main_row" class="row">
@@ -368,16 +368,31 @@
             $("#ui_back").hide();
             $("#ui_msg_quest").addClass("ui_msg_box_hide");
             $("#ui_msg_box_wrapper").addClass("ui_msg_box_hide");
+            $("body").css("overflow","auto");
           })
           $('#ui_msg_quest').on('show.bs.toast', function () 
           {
+            $('html, body').animate({scrollTop: '0px'}, 10);
             $("#ui_back").show();
             $("#ui_back").addClass("ui_back");
-            $("#ui_back").innerHeight($(".main_div").innerHeight()+$("#ui_pagination").innerHeight()+"px");
+
+            // $("#ui_back").height(($("#ui_main_row").height()+$("#ui_pagination").height())+"px");
+            $("#ui_back").height("100vh");
             $("#ui_back").width($("#ui_main_row").width()+"px");
+            $("body").css("overflow","hidden");
 
             $("#ui_msg_quest").removeClass("ui_msg_box_hide");
             $("#ui_back").removeClass("ui_msg_box_hide");
+
+           // if(($("#ui_back").width()/2)- $("#ui_msg_quest").width()>0)
+          //  {
+              $("#ui_msg_quest").css("left", (($("#ui_back").width()-$("#ui_msg_quest").width())/2)+"px");
+          //  }
+
+
+            //$("#ui_msg_quest").attr("left", ($("#ui_back").width()/100)*10+"px");
+
+
           })
         
           // $(document).on("click","#ui_start_test",function(event)
