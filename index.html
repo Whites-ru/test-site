@@ -54,8 +54,10 @@
       .ui_msg_quest
       {
         position: fixed;
-        top: 20%;
+        top: 36%;
         z-index: 99999999;
+        text-align: center;
+        left: 30%;
       }
 
 
@@ -114,7 +116,7 @@
     <div class="container-fluid main_div">
         <div id="ui_main_row" class="row">
 
-            <div class="col s12 m6" id="ui_page_start" style="display: none">
+            <!-- <div class="col s12 m6" id="ui_page_start" style="display: none">
               <div class="card shadow-none">
                 <div class="card-body text-center">
                   <span class="card-title"><b>Калькулятор вашего дохода.<br>Узнайте, сколько денег вы можете зарабатывать в Instagram!</b></span>
@@ -123,7 +125,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <div class="col s12 m6" id="ui_page_result" style="display: none">
               <div class="card shadow-none">
@@ -316,7 +318,7 @@
          
     </div>
 
-  <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center ui_msg_box_hide">
+  <div aria-live="polite" aria-atomic="true" class="ui_msg_box_hide" id="ui_msg_box_wrapper" style="display: content">
     <div id="ui_msg_quest" class="toast ui_msg_box_hide" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
       <div class="toast-header">
         <strong class="mr-auto">Сообщение</strong>
@@ -349,27 +351,9 @@
       function f_ui_init()
       {
           $(".ui_pages").hide();
-          $("#ui_page_start").show();
+          $("#ui_page1").show();
 
-          $('#ui_msg_quest').on('hide.bs.toast', function () 
-          {
-            $("#ui_back").removeClass("ui_back");
-            $("#ui_back").hide();
-            $("#ui_back").perent().addClass("ui_msg_box_hide");
-            $("#ui_back").addClass("ui_msg_box_hide");
-          })
-          $('#ui_msg_quest').on('show.bs.toast', function () 
-          {
-            $("#ui_back").show();
-            $("#ui_back").addClass("ui_back");
-            $("#ui_back").parent().removeClass("ui_msg_box_hide");
-            $("#ui_back").removeClass("ui_msg_box_hide");
-          })
-        
-          $(document).on("click","#ui_start_test",function(event)
-          {
-            $("#ui_page_start").hide();
-            $("#ui_pagination").show();
+          $("#ui_pagination").show();
             $("#ui_pagination").addClass("d-flex flex-wrap justify-content-center");
             $("#ui_page1").show();
 
@@ -377,7 +361,37 @@
             {
               $(".ui_test_prev").hide();
             }
-          });
+
+          $('#ui_msg_quest').on('hide.bs.toast', function () 
+          {
+            $("#ui_back").removeClass("ui_back");
+            $("#ui_back").hide();
+            $("#ui_msg_quest").addClass("ui_msg_box_hide");
+            $("#ui_msg_box_wrapper").addClass("ui_msg_box_hide");
+          })
+          $('#ui_msg_quest').on('show.bs.toast', function () 
+          {
+            $("#ui_back").show();
+            $("#ui_back").addClass("ui_back");
+            $("#ui_back").innerHeight($(".main_div").innerHeight()+$("#ui_pagination").innerHeight()+"px");
+            $("#ui_back").width($("#ui_main_row").width()+"px");
+
+            $("#ui_msg_quest").removeClass("ui_msg_box_hide");
+            $("#ui_back").removeClass("ui_msg_box_hide");
+          })
+        
+          // $(document).on("click","#ui_start_test",function(event)
+          // {
+          //   $("#ui_page_start").hide();
+          //   $("#ui_pagination").show();
+          //   $("#ui_pagination").addClass("d-flex flex-wrap justify-content-center");
+          //   $("#ui_page1").show();
+
+          //   if(dcur_page==1)
+          //   {
+          //     $(".ui_test_prev").hide();
+          //   }
+          // });
           $(document).on("click",".ui_test_next_finish",function(event)
           {
             var t=dcur_page;
