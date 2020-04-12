@@ -97,7 +97,7 @@
       }
       .main_div
       {
-        /*height: 90vh;*/
+        height: 90vh;
       }
       #ui_main_row
       {
@@ -108,6 +108,16 @@
         width: 100%;
         background-color: #411769!important;
       }
+      .n1_v1_selected, .n11_v1_selected, .n12_v1_selected
+      {
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        /*padding: 7px;*/
+      }
+      .ui_pages
+      {
+        height: inherit;
+        overflow: auto;
+      }
     </style>
     
   </head>
@@ -116,165 +126,128 @@
     <div class="container-fluid main_div">
         <div id="ui_main_row" class="row">
 
-            <!-- <div class="col s12 m6" id="ui_page_start" style="display: none">
-              <div class="card shadow-none">
-                <div class="card-body text-center">
-                  <span class="card-title"><b>Калькулятор вашего дохода.<br>Узнайте, сколько денег вы можете зарабатывать в Instagram!</b></span>
-                  <div class="card-text">
-                      <button type="button" class="btn btn-test" id="ui_start_test">Узнать</button>   
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
-            <div class="col s12 m6" id="ui_page_result" style="display: none">
+            <div class="col text-center s12 m6 ui_pages ui_page_current" id="ui_page1" style="display: none">
               <div class="card shadow-none">
                 <div class="card-body">
-                  <h5 class="card-title" style="text-align: center;">Вы можете ежемесячно зарабатывать в Instagram</h5>
-                  <p class="card-text">
-                    <h5 style="text-align: center;"><span id="ui_result_sum">000</span> руб./мес</h5>
-                    <p style="text-align: center;">Отличная сумма для старта!</p>
-                    <p style="text-align: center;">Теперь ждем вас на нашем курсе, где вместе решим вопрос с поиском клиентов и увеличением компетенций!</p>
-                    <h6 style="text-align: center;"><p class=" mb-2 text-muted">Данные по стоимости услуг взяты на основе:<br>- статистики главного сайта вакансий Hh.ru<br>- анализа рынка Instagram<br>- информации из блогерских чатов</p></h6>
-                    <div style="text-align: center;">
-                      <button id="ui_to_main_study" class="btn btn-test" style="text-align: center;">Принять участие</button>
-                    </div>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col text-center s12 m6 ui_pages" id="ui_page1" style="display: none">
-              
-              <div class="card shadow-none">
-                <div class="card-body">
-                  <h5 class="card-title">Начинаем подсчет!</h5>
-                  <h5 class="card-subtitle mb-2 text-muted" style="padding-top: 2%;">Выберите задачи, которые вы хотели бы выполнять</h5>
+                  <h5 class="card-title">Выбор типа строения</h5>
+                  <!-- <h5 class="card-subtitle mb-2 text-muted" style="padding-top: 2%;">Выберите задачи, которые вы хотели бы выполнять</h5> -->
                   <p class="card-text"> 
-
-                    <div class="container">
-                      <div class="row">
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q1" prof_q="p1"><label class="custom-control-label" for="p1_q1">ответы на комментарии и директ</label>
-                        </div>
-                        <div class="col-sm-auto"></div>
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q2" prof_q="p1"><label class="custom-control-label" for="p1_q2">составление фото ленты для профилей</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q3" prof_q="p1"><label class="custom-control-label" for="p1_q3">написание текстов, копирайтинг</label>
-                        </div>
-                        <div class="col-sm-auto"></div>
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q4" prof_q="p1"><label class="custom-control-label" for="p1_q4">создание иллюстраций</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q5" prof_q="p1"><label class="custom-control-label" for="p1_q5">составление контент-план профиля</label>
-                        </div>
-                        <div class="col-sm-auto"></div>
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q6" prof_q="p1"><label class="custom-control-label" for="p1_q6">монтаж видео</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q7" prof_q="p1"><label class="custom-control-label" for="p1_q7">закупка рекламы, контроль выхода</label>
-                        </div>
-                        <div class="col-sm-auto"></div>
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q8" prof_q="p1"><label class="custom-control-label" for="p1_q8">создание макетов для рекламы</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q9" prof_q="p1"><label class="custom-control-label" for="p1_q9">создание стратегии продвижения профиля и ее реализация</label>
-                        </div>
-                        <div class="col-sm-auto"></div>
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q10" prof_q="p1"><label class="custom-control-label" for="p1_q10">помощь с организацией фотосессии</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q11" prof_q="p1"><label class="custom-control-label" for="p1_q11">организация марафонов и giveaway</label>
-                        </div>
-                        <div class="col-sm-auto"></div>
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q12" prof_q="p1"><label class="custom-control-label" for="p1_q12">создание Instagram масок</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q13" prof_q="p1"><label class="custom-control-label" for="p1_q13">дизайн сайтов и методичек</label>
-                        </div>
-                        <div class="col-sm-auto"></div>
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q14" prof_q="p1"><label class="custom-control-label" for="p1_q14">продюсирование блогера</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q15" prof_q="p1"><label class="custom-control-label" for="p1_q15">производитель фотоконтента</label>
-                        </div>
-                        <div class="col-sm-auto"></div>
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q16" prof_q="p1"><label class="custom-control-label" for="p1_q16">разбор Instagram профилей</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q17" prof_q="p1"><label class="custom-control-label" for="p1_q17">техническая поддержка блога и инфобизнеса</label>
-                        </div>
-                        <div class="col-sm-auto"></div>
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q18" prof_q="p1"><label class="custom-control-label" for="p1_q18">создание креативных stories</label>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p1_q19" prof_q="p1"><label class="custom-control-label" for="p1_q19">редактирование текстов</label>
-                        </div>
-                        <div class="col-sm-auto"></div>
-                        <div class="col"></div>
-                      </div>
-
+                    <div class="row row-cols-2">
+                      <div class="col col-form-label" id="n1_v1"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n1_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
+                      <div class="col col-form-label" id="n1_v2"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n1_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
+                      <div class="col col-form-label" id="n1_v3"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n1_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
+                      <div class="col col-form-label" id="n1_v4"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n1_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
+                      <div class="col col-form-label" id="n1_v5"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n1_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
                     </div>
-                    
-   
                   </p>
                 </div>
               </div>
             </div>
 
             <div class="col text-center s12 m6 ui_pages" id="ui_page2" style="display: none">
+
               <div class="card shadow-none">
                 <div class="card-body">
-                  <h5 class="card-title">Сколько часов вы готовы уделять работе?</h5>
-                  <h5 class="card-subtitle mb-2 text-muted" style="padding-top: 2%;">Помните, что работа в Instagram дарит вам гибкий график и свободу передвижений:</h5>
+                  <h5 class="card-title">Площадь всех помещений 1 этажа без террас, кв. м.</h5>
                   <p class="card-text" style="padding-top: 5%;">
-                    <div id="ui_slider_1"></div>
+                    <div class="row">
+                      <div class="col">
+                        <div id="ui_slider_n2"></div>
+                        <span id="ui_slider_n2_value"></span>
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" id="ui_n2_manual">
+                          <label class="custom-control-label" for="ui_n2_manual">Указать вручную</label>
+                        </div>
+                      </div>
+                      <div>
+                        <input type="number" min="10" max="2000" class="form-control ui_text_manual" id="n2_text" style="display: none">
+                      </div>
+                    </div>
                   </p>
                 </div>
               </div>
+
+              <div class="card shadow-none">
+                <div class="card-body">
+                  <h5 class="card-title">Кол-во всех помещений 1 этажа без террас.</h5>
+                  <p class="card-text" style="padding-top: 5%;">
+                    <div id="ui_slider_n3"></div>
+                    <span id="ui_slider_n3_value"></span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="card shadow-none">
+                <div class="card-body">
+                  <h5 class="card-title">Площадь террас, кв.м.</h5>
+                  <p class="card-text" style="padding-top: 5%;">
+                    <div class="row">
+                      <div class="col">
+                        <div id="ui_slider_n4"></div>
+                        <span id="ui_slider_n4_value"></span>
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" id="ui_n4_manual">
+                          <label class="custom-control-label" for="ui_n4_manual">Указать вручную</label>
+                        </div>
+                      </div>
+                      <div>
+                        <input type="number" min="1" max="2000" class="form-control ui_text_manual" id="n4_text" style="display: none">
+                      </div>
+                    </div>
+                  </p>
+                </div>
+              </div>
+
             </div>
 
             <div class="col text-center s12 m6 ui_pages" id="ui_page3" style="display: none">
+
               <div class="card shadow-none">
                 <div class="card-body">
-                  <h5 class="card-title">Есть ли у вас опыт, хорошие отзывы или портфолио?</h5>
-                  <h5 class="card-subtitle mb-2 text-muted" style="padding-top: 2%;">Если да, то поставьте галочку.</h5>
+                  <h5 class="card-title">Площадь всех помещений 2 этажа без балконов, кв. м.</h5>
+                  <p class="card-text" style="padding-top: 5%;">
+                  <div class="row">
+                    <div class="col">
+                      <div id="ui_slider_n5"></div>
+                      <span id="ui_slider_n5_value"></span>
+                      <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="ui_n5_manual">
+                        <label class="custom-control-label" for="ui_n5_manual">Указать вручную</label>
+                      </div>
+                    </div>
+                    <div>
+                      <input type="number" min="10" max="2000" class="form-control ui_text_manual" id="n5_text" style="display: none">
+                    </div>
+                  </div>
+                  </p>
+                </div>
+              </div>
+
+              <div class="card shadow-none">
+                <div class="card-body">
+                  <h5 class="card-title">Кол-во всех помещений 2 этажа без балконов</h5>
+                  <p class="card-text" style="padding-top: 5%;">
+                    <div id="ui_slider_n6"></div>
+                    <span id="ui_slider_n6_value"></span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="card shadow-none">
+                <div class="card-body">
+                  <h5 class="card-title">Площадь балконов, кв.м.</h5>
                   <p class="card-text" style="padding-top: 5%;">
                     <div class="row">
-                      <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p3_q1" prof_q="p1"><label class="custom-control-label" for="p3_q1">Да</label>
+                      <div class="col">
+                        <div id="ui_slider_n7"></div>
+                        <span id="ui_slider_n7_value"></span>
+                        <div class="custom-control custom-switch">
+                          <input type="checkbox" class="custom-control-input" id="ui_n7_manual">
+                          <label class="custom-control-label" for="ui_n7_manual">Указать вручную</label>
+                        </div>
                       </div>
-                      <div class="col-sm-auto"></div>
-                      <div class="col custom-control custom-checkbox border rounded ui_page1_quest">
-                          <input type="checkbox" class="custom-control-input" id="p3_q2" prof_q="p1"><label class="custom-control-label" for="p3_q2">Нет</label>
+                      <div>
+                        <input type="number" min="1" max="2000" class="form-control ui_text_manual" id="n7_text" style="display: none">
                       </div>
                     </div>
                   </p>
@@ -283,23 +256,181 @@
             </div>
 
             <div class="col text-center s12 m6 ui_pages" id="ui_page4" style="display: none">
+              
               <div class="card shadow-none">
                 <div class="card-body">
-                  <h5 class="card-title">Сколько проектов вы готовы вести?</h5>
-                  <h5 class="card-subtitle mb-2 text-muted" style="padding-top: 2%;">Instagram помощник может работать с одним блогером, а может совмещать несколько.<br>Кстати, ваши компетенции будут нужны аккаунтам студий, школ, магазинов.<br>
-                  Выберите комфортное количество проектов:</h5>
+                  <h5 class="card-title">Порода древесины</h5>
                   <p class="card-text" style="padding-top: 5%;">   
-                    <div id="ui_slider_2"></div>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col custom-control custom-checkbox border rounded ui_page_quest">
+                          <input type="checkbox" class="custom-control-input" id="n8_v1"><label class="custom-control-label" for="n8_v1">сосна обыкновенная. Кировская область</label>
+                        </div>
+                        <div class="col-sm-auto"></div>
+                        <div class="col custom-control custom-checkbox border rounded ui_page_quest">
+                          <input type="checkbox" class="custom-control-input" id="n8_v2"><label class="custom-control-label" for="n8_v2">кедр сибирский. Красноярский край</label>
+                        </div>
+                        <div class="col-sm-auto"></div>
+                        <div class="col custom-control custom-checkbox border rounded ui_page_quest">
+                          <input type="checkbox" class="custom-control-input" id="n8_v3"><label class="custom-control-label" for="n8_v3">лиственница сибирская. Красноярский край</label>
+                        </div>
+                      </div>
+                    </div>
+                  </p>
+                </div>
+              </div>
+
+               <div class="card shadow-none">
+                <div class="card-body">
+                  <h5 class="card-title">Диаметр, см</h5>
+                  <p class="card-text" style="padding-top: 5%;">
+                    <div id="ui_slider_n9"></div>
+                    <span id="ui_slider_n9_value"></span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="card shadow-none" id="ui_page4_option1">
+                <div class="card-body">
+                  <h5 class="card-title">Полтора венца закладные из лиственницы</h5>
+                  <p class="card-text" style="padding-top: 5%;">
+                    <div class="row">
+                      <div class="col custom-control custom-checkbox border rounded ui_page_quest">
+                          <input type="checkbox" class="custom-control-input" id="n10_v1"><label class="custom-control-label" for="n10_v1">Да</label>
+                      </div>
+                      <div class="col-sm-auto"></div>
+                      <div class="col custom-control custom-checkbox border rounded ui_page_quest">
+                          <input type="checkbox" class="custom-control-input" id="n10_v2"><label class="custom-control-label" for="n10_v2">Нет</label>
+                      </div>
+                    </div>
+                  </p>
+                </div>
+              </div>
+
+              <div class="card shadow-none">
+                <div class="card-body">
+                  <h5 class="card-title">Технология</h5>
+                  <p class="card-text"> 
+                    <div class="row row-cols-3">
+                      <div class="col" id="n11_v1"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n11_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
+                      <div class="col" id="n11_v2"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n11_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
+                      <div class="col" id="n11_v3"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n11_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
+                    </div>
+                  </p>
+                </div>
+              </div>
+
+              <div class="card shadow-none">
+                <div class="card-body">
+                  <h5 class="card-title">Выпуски</h5>
+                  <p class="card-text"> 
+                    <div class="row row-cols-2">
+                      <div class="col" id="n12_v1"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n12_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
+                      <div class="col" id="n12_v2"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n12_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
+                    </div>
                   </p>
                 </div>
               </div>
             </div>
 
-          
+            <div class="col text-center s12 m6 ui_pages" id="ui_page5" style="display: none">
+
+              <div class="card shadow-none">
+                <div class="card-body">
+                  <h5 class="card-title">Высота первого этажа после усадки</h5>
+                  <p class="card-text" style="padding-top: 5%;">
+                    <div id="ui_slider_n13"></div>
+                    <span id="ui_slider_n13_value"></span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="card shadow-none">
+                <div class="card-body">
+                  <h5 class="card-title">Высота второго этажа после усадки</h5>
+                  <p class="card-text" style="padding-top: 5%;">
+                    <div id="ui_slider_n14"></div>
+                    <span id="ui_slider_n14_value"></span>
+                  </p>
+                </div>
+              </div>
+              <div class="card shadow-none">
+                <div class="card-body">
+                  <h5 class="card-title">Высота короткой стены после усадки</h5>
+                  <p class="card-text" style="padding-top: 5%;">
+                    <div id="ui_slider_n15"></div>
+                    <span id="ui_slider_n15_value"></span>
+                  </p>
+                </div>
+              </div>
+
+              <div class="card shadow-none">
+                <div class="card-body">
+                  <h5 class="card-title">Деревянные перекрытия фундамента</h5>
+                  <p class="card-text" style="padding-top: 5%;">
+                    <div class="row">
+                      <div class="col custom-control custom-checkbox border rounded ui_page_quest">
+                          <input type="checkbox" class="custom-control-input" id="n16_v1"><label class="custom-control-label" for="n16_v1">Да</label>
+                      </div>
+                      <div class="col-sm-auto"></div>
+                      <div class="col custom-control custom-checkbox border rounded ui_page_quest">
+                          <input type="checkbox" class="custom-control-input" id="n16_v2"><label class="custom-control-label" for="n16_v2">Нет</label>
+                      </div>
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col text-center s12 m6 ui_pages" id="ui_page6" style="display: none">
+              <div class="card shadow-none">
+                <div class="card-body">
+                  <h5 class="card-title">Угол наклона кровли</h5>
+                  <p class="card-text"> 
+                    <div class="row row-cols-2">
+                      <div class="col" id="n1_v1">
+                        <div id="ui_slider_n17"></div>
+                        <span id="ui_slider_n17_value"></span>
+                      </div>
+                      <div class="col" id="n17_img"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="rounded mx-auto d-block img-thumbnail" alt="..."></div>
+                    </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col text-center s12 m6 ui_pages" id="ui_page7" style="display: none">
+              <div class="card shadow-none">
+                <div class="card-body">
+                  <h5 class="card-title">Ваш расчет будет отправлен вам на указанный электронный адрес в течение двух дней.</h5>
+                  <p class="card-text"> 
+                    <form class="container-fluid text-md-left">
+                      <div class="form-group">
+                        <label for="n_email">Ваш email</label>
+                        <input type="email" class="form-control" id="n_email">
+                      </div>
+                      <div class="form-group">
+                        <label for="n_tel">Телефон</label>
+                        <input type="tel" class="form-control" id="n_tel">
+                      </div>
+                      <div class="form-group">
+                        <label for="n_name">Имя</label>
+                        <input type="text" class="form-control" id="n_name">
+                      </div>
+                      <div class="form-group">
+                        <label for="n_descr">Комментарий</label>
+                        <textarea class="form-control" id="n_descr" rows="3"></textarea>
+                      </div>
+                    </form>
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <div class="row float-right" id="ui_pagination" style="display: none; padding-left: 35px;padding-right: 35px;">
-            <div class="align-items-center d-flex" style="width: 250px;">
+            <!-- <div class="align-items-center d-flex" style="width: 250px;">
               <div style="width: 100px;">
                 Готово: 
                 <span><b id="ui_progress_procents">0%</b></span>
@@ -307,28 +438,28 @@
               <div class="progress" style="height: 5px;width: 150px;">
                 <div id="ui_progress" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-            </div>
+            </div> -->
             <div class="align-items-center col d-flex">
               <button type="button" class="btn btn-test ui_test_prev" style="margin-top: 0px;"><i class="fa fa-chevron-left"></i></button>
               <button type="button" class="btn btn-test ui_test_next" style="margin-top: 0px;">Далее</button>
-              <button type="button" class="btn btn-test ui_test_next_finish" style="margin-top: 0px;display: none">Узнать свой доход</button>
+              <button type="button" class="btn btn-test ui_test_next_finish" style="margin-top: 0px;display: none">Отправить</button>
             </div>
           </div>
     </div>
          
     </div>
 
-  <div aria-live="polite" aria-atomic="true" class="ui_msg_box_hide" id="ui_msg_box_wrapper" style="display: content">
+  <!-- <div aria-live="polite" aria-atomic="true" class="ui_msg_box_hide" id="ui_msg_box_wrapper" style="display: content">
     <div id="ui_msg_quest" class="toast ui_msg_box_hide" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
       <div class="toast-header">
         <strong class="mr-auto">Сообщение</strong>
         <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="toast-body">
-        Вы не выбрали ни одного варианта. Если вам не подошло ни одно утверждение, закройте это сообщение и нажмите «ДАЛЕЕ»
+        Вы не выбрали ни одного варианта.
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div id="ui_back" style="display: none;">
   </div>
@@ -341,12 +472,13 @@
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nouislider@14.1.1/distribute/nouislider.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js"></script>
+    <script type="text/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
 
      <script type="text/javascript">
       var dtime_start = new Date();
-      var drepeate=false;
-      var nrepeate=0;
-      var dcur_page=1;
+
+      var res_n1=0;
 
       function f_ui_init()
       {
@@ -354,13 +486,10 @@
           $("#ui_page1").show();
 
           $("#ui_pagination").show();
-            $("#ui_pagination").addClass("d-flex flex-wrap justify-content-center");
-            $("#ui_page1").show();
+          $("#ui_pagination").addClass("d-flex flex-wrap justify-content-center");
+          $("#ui_page1").show();
 
-            if(dcur_page==1)
-            {
-              $(".ui_test_prev").hide();
-            }
+          $(".ui_test_prev").hide();
 
           $('#ui_msg_quest').on('hide.bs.toast', function () 
           {
@@ -370,190 +499,611 @@
             $("#ui_msg_box_wrapper").addClass("ui_msg_box_hide");
             $("body").css("overflow","auto");
           })
-          $('#ui_msg_quest').on('show.bs.toast', function () 
-          {
-            $('html, body').animate({scrollTop: '0px'}, 10);
-            $("#ui_back").show();
-            $("#ui_back").addClass("ui_back");
-
-            // $("#ui_back").height(($("#ui_main_row").height()+$("#ui_pagination").height())+"px");
-            $("#ui_back").height("100vh");
-            $("#ui_back").width($("#ui_main_row").width()+"px");
-            $("body").css("overflow","hidden");
-
-            $("#ui_msg_quest").removeClass("ui_msg_box_hide");
-            $("#ui_back").removeClass("ui_msg_box_hide");
-
-           // if(($("#ui_back").width()/2)- $("#ui_msg_quest").width()>0)
-          //  {
-              $("#ui_msg_quest").css("left", (($("#ui_back").width()-$("#ui_msg_quest").width())/2)+"px");
-          //  }
-
-
-            //$("#ui_msg_quest").attr("left", ($("#ui_back").width()/100)*10+"px");
-
-
-          })
-        
-          // $(document).on("click","#ui_start_test",function(event)
+          // $('#ui_msg_quest').on('show.bs.toast', function () 
           // {
-          //   $("#ui_page_start").hide();
-          //   $("#ui_pagination").show();
-          //   $("#ui_pagination").addClass("d-flex flex-wrap justify-content-center");
-          //   $("#ui_page1").show();
+          //   $('html, body').animate({scrollTop: '0px'}, 10);
+          //   $("#ui_back").show();
+          //   $("#ui_back").addClass("ui_back");
 
-          //   if(dcur_page==1)
-          //   {
-          //     $(".ui_test_prev").hide();
-          //   }
-          // });
+          //   // $("#ui_back").height(($("#ui_main_row").height()+$("#ui_pagination").height())+"px");
+          //   $("#ui_back").height("100vh");
+          //   $("#ui_back").width($("#ui_main_row").width()+"px");
+          //   $("body").css("overflow","hidden");
+
+          //   $("#ui_msg_quest").removeClass("ui_msg_box_hide");
+          //   $("#ui_back").removeClass("ui_msg_box_hide");
+
+          //   $("#ui_msg_quest").css("left", (($("#ui_back").width()-$("#ui_msg_quest").width())/2)+"px");
+          // })
+        
+         
           $(document).on("click",".ui_test_next_finish",function(event)
           {
-            var t=dcur_page;
-            $("#ui_msg_quest").toast("hide");
-            $("#ui_page"+t.toString()).hide();
-            $("#ui_pagination").removeClass("d-flex flex-wrap justify-content-center");
-            $("#ui_pagination").hide();
-            $(".ui_pages").hide();
-            $("#ui_page_result").show();
-            $(".ui_result_profs").hide();
+            // var t=dcur_page;
+            // $("#ui_msg_quest").toast("hide");
+            // $("#ui_page"+t.toString()).hide();
+            // $("#ui_pagination").removeClass("d-flex flex-wrap justify-content-center");
+            // $("#ui_pagination").hide();
+            // $(".ui_pages").hide();
+            // $("#ui_page_result").show();
+            // $(".ui_result_profs").hide();
             f_result_init(); 
           });
 
           $(document).on("click",".ui_test_next",function(event)
           {
-            var t=dcur_page;
-              f_show_msg("ui_page"+(t).toString());
-              if(drepeate==true)
+            var did_cur_page=$(".ui_page_current").prop("id");
+            var did_next_page="";
+
+            if(did_cur_page=="ui_page2")
+            {
+              var dn1=$(".n1_v1_selected").parent().prop("id");
+              console.log("<--dn1=",dn1);
+              if(dn1=="n1_v3" || dn1=="n1_v4" || dn1=="n1_v5")
               {
-                $("#ui_page"+t.toString()).hide();
-                $("#ui_page"+(t+1).toString()).show();
-                $("#ui_pagination .page-item").removeClass("active");
-                $("#ui_pagination .page-item a[page='ui_page"+(t+1).toString()+"']").parent().addClass("active");
-                drepeate=false;
-                nrepeate=0;
-
-                dcur_page=dcur_page+1;
-                
-                var tn=parseInt($("#ui_progress").attr("aria-valuenow"))+25;
-                $("#ui_progress").attr("aria-valuenow",tn.toString());
-                $("#ui_progress").width(tn.toString()+"%");
-                $("#ui_progress_procents").empty().append(tn.toString()+"%");
-
-                if(dcur_page==1)
-                {
-                  $(".ui_test_prev").hide();
-                }
-                else
-                {
-                  $(".ui_test_prev").show();
-                }
-
-                if(dcur_page==4)
-                {
-                  $(".ui_test_next_finish").show();
-                  $(".ui_test_next").hide();
-                }
-                else
-                {
-                  $(".ui_test_next").show();
-                  $(".ui_test_next_finish").hide();
-                }
+                did_next_page="ui_page3";
               }
+              else
+              {
+                did_next_page="ui_page4"
+              }
+            }
+            else
+            {
+              switch(did_cur_page)
+              {
+                case "ui_page1":
+                  did_next_page="ui_page2";
+                  break;
+                case "ui_page3":
+                  did_next_page="ui_page4";
+                  break;
+                case "ui_page4":
+                  did_next_page="ui_page5";
+                  break;
+                case "ui_page5":
+                  did_next_page="ui_page6";
+                  break;
+                case "ui_page6":
+                  did_next_page="ui_page7";
+                  break;
+              }
+            };
+
+            $("#"+did_cur_page).hide();
+            $("#"+did_next_page).show();
+
+            $("#"+did_cur_page).removeClass("ui_page_current");
+            $("#"+did_next_page).addClass("ui_page_current");
+
+            $("#ui_pagination .page-item").removeClass("active");
+            $("#ui_pagination .page-item a[page='"+did_next_page+"']").parent().addClass("active");
+
+            if(did_next_page=="ui_page1")
+            {
+              $(".ui_test_prev").hide();
+            }
+            else
+            {
+              $(".ui_test_prev").show();
+            }
+
+            if(did_next_page=="ui_page7")
+            {
+              $(".ui_test_next_finish").show();
+              $(".ui_test_next").hide();
+            }
+            else
+            {
+              $(".ui_test_next").show();
+              $(".ui_test_next_finish").hide();
+            }
           });
 
 
 
           $(document).on("click",".ui_test_prev",function(event)
           {
-            var t=dcur_page;
-            if(t>=1 && t-1!=0)
+            var did_cur_page=$(".ui_page_current").prop("id");
+            var did_next_page="";
+
+            if(did_cur_page=="ui_page4")
             {
-              $("#ui_page"+t.toString()).hide();
-              $("#ui_page"+(t-1).toString()).show();
-              $("#ui_pagination .page-item").removeClass("active");
-              $("#ui_pagination .page-item a[page='ui_page"+(t-1).toString()+"']").parent().addClass("active");
-
-              
-              var tn=parseInt($("#ui_progress").attr("aria-valuenow"))-25;
-              $("#ui_progress").attr("aria-valuenow",tn.toString());
-              $("#ui_progress").width(tn.toString()+"%");
-              $("#ui_progress_procents").empty().append(tn.toString()+"%");
-              dcur_page=dcur_page-1;
-
-              if(dcur_page==1)
+              var dn1=$(".n1_v1_selected").parent().prop("id");
+              console.log("<--dn1=",dn1);
+              if(dn1=="n1_v3" || dn1=="n1_v4" || dn1=="n1_v5")
               {
-                $(".ui_test_prev").hide();
+                did_next_page="ui_page3";
               }
               else
               {
-                $(".ui_test_prev").show();
+                did_next_page="ui_page2"
               }
-              if(dcur_page==4)
+            }
+            else
+            {
+              switch(did_cur_page)
               {
-                $(".ui_test_next_finish").show();
-                $(".ui_test_next").hide();
+                case "ui_page2":
+                  did_next_page="ui_page1";
+                  break;
+                case "ui_page3":
+                  did_next_page="ui_page2";
+                  break;
+                // case "ui_page4":
+                //   did_next_page="ui_page5";
+                //   break;
+                case "ui_page5":
+                  did_next_page="ui_page4";
+                  break;
+                case "ui_page6":
+                  did_next_page="ui_page5";
+                  break;
+                case "ui_page7":
+                  did_next_page="ui_page6";
+                  break;
               }
-              else
-              {
-                $(".ui_test_next").show();
-                $(".ui_test_next_finish").hide();
-              }
-            } 
+            };
+
+            $("#"+did_cur_page).hide();
+            $("#"+did_next_page).show();
+
+            $("#"+did_cur_page).removeClass("ui_page_current");
+            $("#"+did_next_page).addClass("ui_page_current");
+
+            $("#ui_pagination .page-item").removeClass("active");
+            $("#ui_pagination .page-item a[page='"+did_next_page+"']").parent().addClass("active");
+
+            if(did_next_page=="ui_page1")
+            {
+              $(".ui_test_prev").hide();
+            }
+            else
+            {
+              $(".ui_test_prev").show();
+            }
+
+            if(did_next_page=="ui_page7")
+            {
+              $(".ui_test_next_finish").show();
+              $(".ui_test_next").hide();
+            }
+            else
+            {
+              $(".ui_test_next").show();
+              $(".ui_test_next_finish").hide();
+            };
           });
 
-          $(document).on("change","#p3_q1",function(event)
+          $(document).on("change","#n10_v1",function(event)
           {
             if(this.checked)
             {
-              $("#p3_q2").prop("checked",false);
+              $("#n10_v2").prop("checked",false);
             }
           });
-          $(document).on("change","#p3_q2",function(event)
+          $(document).on("change","#n10_v2",function(event)
           {
             if(this.checked)
             {
-              $("#p3_q1").prop("checked",false);
+              $("#n10_v1").prop("checked",false);
             }
           });
 
-          $(document).on("click","#ui_to_main_study",function(event)
+          $(document).on("change","#n16_v1",function(event)
           {
-            window.open("https://webinar.lebedeva-blog.ru/instahelper");
+            if(this.checked)
+            {
+              $("#n16_v2").prop("checked",false);
+            }
           });
+          $(document).on("change","#n16_v2",function(event)
+          {
+            if(this.checked)
+            {
+              $("#n16_v1").prop("checked",false);
+            }
+          });
+
+          $(document).on("change","#n8_v1",function(event)
+          {
+            if(this.checked)
+            {
+              $("#n8_v2").prop("checked",false);
+              $("#n8_v3").prop("checked",false);
+              $("#ui_page4_option1").show();
+            }
+          });
+          $(document).on("change","#n8_v2",function(event)
+          {
+            if(this.checked)
+            {
+              $("#n8_v1").prop("checked",false);
+              $("#n8_v3").prop("checked",false);
+              $("#ui_page4_option1").show();
+            }
+          });
+          $(document).on("change","#n8_v3",function(event)
+          {
+            if(this.checked)
+            {
+              $("#n8_v1").prop("checked",false);
+              $("#n8_v2").prop("checked",false);
+              $("#ui_page4_option1").hide();
+
+            }
+          });
+
+
+
+          $(document).on("click",".n1_var",function(event)
+          {
+            $(".n1_var").removeClass("n1_v1_selected");
+            $(this).addClass("n1_v1_selected");
+          });
+
+          $(document).on("click",".n11_var",function(event)
+          {
+            $(".n11_var").removeClass("n11_v1_selected");
+            $(this).addClass("n11_v1_selected");
+          });
+          $(document).on("click",".n12_var",function(event)
+          {
+            $(".n12_var").removeClass("n12_v1_selected");
+            $(this).addClass("n12_v1_selected");
+          });
+
+
+          $(document).on("change","#ui_n2_manual",function (event) 
+          {
+            if(this.checked)
+            {
+              $("#n2_text").parent().addClass("col-3");
+              $("#n2_text").show();
+              ui_slider_n2.setAttribute("disabled", true);
+            }
+            else
+            {
+              $("#n2_text").hide();
+              ui_slider_n2.removeAttribute('disabled');
+              $("#n2_text").parent().removeClass("col-3");
+            }
+          });
+          $(document).on("change","#ui_n4_manual",function (event) 
+          {
+            if(this.checked)
+            {
+              $("#n4_text").parent().addClass("col-3");
+              $("#n4_text").show();
+              ui_slider_n4.setAttribute("disabled", true);
+            }
+            else
+            {
+              $("#n4_text").hide();
+              ui_slider_n4.removeAttribute('disabled');
+              $("#n4_text").parent().removeClass("col-3");
+            }
+          });
+          $(document).on("change","#ui_n5_manual",function (event) 
+          {
+            if(this.checked)
+            {
+              $("#n5_text").parent().addClass("col-3");
+              $("#n5_text").show();
+              ui_slider_n5.setAttribute("disabled", true);
+            }
+            else
+            {
+              $("#n5_text").hide();
+              ui_slider_n5.removeAttribute('disabled');
+              $("#n5_text").parent().removeClass("col-3");
+            }
+          });
+          $(document).on("change","#ui_n7_manual",function (event) 
+          {
+            if(this.checked)
+            {
+              $("#n7_text").parent().addClass("col-3");
+              $("#n7_text").show();
+              ui_slider_n7.setAttribute("disabled", true);
+            }
+            else
+            {
+              $("#n7_text").hide();
+              ui_slider_n7.removeAttribute('disabled');
+              $("#n7_text").parent().removeClass("col-3");
+            }
+          });
+
+          $(document).on("change","#n2_text",function (event) 
+          {
+            ui_slider_n2.noUiSlider.set([parseInt($(this).val())]);
+          });
+          $(document).on("change","#n4_text",function (event) 
+          {
+            ui_slider_n4.noUiSlider.set([parseInt($(this).val())]);
+          });
+          $(document).on("change","#n5_text",function (event) 
+          {
+            ui_slider_n5.noUiSlider.set([parseInt($(this).val())]);
+          });
+          $(document).on("change","#n7_text",function (event) 
+          {
+            ui_slider_n7.noUiSlider.set([parseInt($(this).val())]);
+          });
+
+          $(document).on("change",".ui_text_manual",function (event) 
+          {
+            event.preventDefault();
+            var dmin=parseInt($(this).attr("min"));
+            var dmax=parseInt($(this).attr("max"));
+            var dvar=parseInt($(this).val());
+            if(dvar<dmin)
+            {
+              $(this.value=dmin);
+            }
+            else if(dvar>dmax)
+            {
+              $(this.value=dmax);
+            }
+          });
+
+          $("#ui_page4_option1").hide();
+
+
+
+
 
       };
 
         function f_init_sliders()
         {
-          var ui_slider_1 = document.getElementById("ui_slider_1");
-          noUiSlider.create(ui_slider_1, {
-              start: [1],
+          var ui_slider_n2 = document.getElementById("ui_slider_n2");
+          noUiSlider.create(ui_slider_n2, {
+              start: [10],
               step: 1,
               range: {
-                  'min': 1,
-                  'max': 8
+                  'min': [10],
+                  'max': [2000]
               },
               connect: true,
               pips: {
-                  mode: 'steps',
-                  density: 10
+                  mode: 'range',
+                  density: 1
               }
           });
-          var ui_slider_2 = document.getElementById("ui_slider_2");
-          noUiSlider.create(ui_slider_2, {
+         
+
+          var ui_slider_n3 = document.getElementById("ui_slider_n3");
+          noUiSlider.create(ui_slider_n3, {
               start: [1],
               step: 1,
               range: {
-                  'min': 1,
-                  'max': 8
+                  'min': [1],
+                  'max': [30]
               },
               connect: true,
               pips: {
-                  mode: 'steps',
-                  density: 10
+                  mode: 'range',
+                  density: 1
               }
           });
+          
+
+          var ui_slider_n4 = document.getElementById("ui_slider_n4");
+          noUiSlider.create(ui_slider_n4, {
+              start: [1],
+              step: 1,
+              range: {
+                  'min': [1],
+                  'max': [40]
+              },
+              connect: true,
+              pips: {
+                  mode: 'range',
+                  density: 1
+              }
+          });
+         
+
+          var ui_slider_n5 = document.getElementById("ui_slider_n5");
+          noUiSlider.create(ui_slider_n5, {
+              start: [10],
+              step: 1,
+              range: {
+                  'min': [10],
+                  'max': [2000]
+              },
+              connect: true,
+              pips: {
+                  mode: 'range',
+                  density: 1
+              }
+          });
+          var ui_slider_n6 = document.getElementById("ui_slider_n6");
+          noUiSlider.create(ui_slider_n6, {
+              start: [1],
+              step: 1,
+              range: {
+                  'min': [1],
+                  'max': [30]
+              },
+              connect: true,
+              pips: {
+                  mode: 'range',
+                  density: 1
+              }
+          });
+          var ui_slider_n7 = document.getElementById("ui_slider_n7");
+          noUiSlider.create(ui_slider_n7, {
+              start: [1],
+              step: 1,
+              range: {
+                  'min': [1],
+                  'max': [100]
+              },
+              connect: true,
+              pips: {
+                  mode: 'range',
+                  density: 1
+              }
+          });
+
+          var ui_slider_n9 = document.getElementById("ui_slider_n9");
+          noUiSlider.create(ui_slider_n9, {
+              start: [34],
+              step: 2,
+              range: {
+                  'min': [34],
+                  'max': [60]
+              },
+              connect: true,
+              pips: {
+                  mode: 'range',
+                  density: 1
+              }
+          });
+          var ui_slider_n13 = document.getElementById("ui_slider_n13");
+          noUiSlider.create(ui_slider_n13, {
+              start: [2.2],            
+              step: 0.01,
+              range: {
+                  'min': [2.2],
+                  'max': [3.6]
+              },
+              connect: true,
+              pips: {
+                  mode: 'range',
+                  density: 1,
+                  format: wNumb({
+                  decimals: 2
+                })
+              }
+              
+          });
+          var ui_slider_n14 = document.getElementById("ui_slider_n14");
+          noUiSlider.create(ui_slider_n14, {
+              start: [2.2],
+              step: 0.01,
+              range: {
+                  'min': [2.2],
+                  'max': [3.6]
+              },
+              connect: true,
+              pips: {
+                  mode: 'range',
+                  density: 1,
+                  format: wNumb({
+                  decimals: 2
+                })
+              }
+          });
+          var ui_slider_n15 = document.getElementById("ui_slider_n15");
+          noUiSlider.create(ui_slider_n15, {
+              start: [0.5],
+              step: 0.01,
+              range: {
+                  'min': [0.5],
+                  'max': [2.0]
+              },
+              connect: true,
+              pips: {
+                  mode: 'range',
+                  density: 1,
+                  format: wNumb({
+                  decimals: 2
+                })
+              }
+          });
+          var ui_slider_n17 = document.getElementById("ui_slider_n17");
+          noUiSlider.create(ui_slider_n17, {
+              start: [15],
+              step: 1,
+              range: {
+                  'min': [15],
+                  'max': [45]
+              },
+              connect: true,
+              pips: {
+                  mode: 'range',
+                  density: 1
+              }
+          });
+
+
+          var ui_slider_n2_value = document.getElementById("ui_slider_n2_value");
+          ui_slider_n2.noUiSlider.on('update', function (values, handle) 
+          {
+              ui_slider_n2_value.innerHTML = values[handle];
+              ui_slider_n4.noUiSlider.updateOptions({
+                range: {
+                    'min': [1],
+                    'max': [parseInt(values[handle])]
+                }
+              });
+              $("#n4_text").attr("max",values[handle]);
+          });
+
+          var ui_slider_n3_value = document.getElementById("ui_slider_n3_value");
+          ui_slider_n3.noUiSlider.on('update', function (values, handle) {
+              ui_slider_n3_value.innerHTML = values[handle];
+          });
+
+          var ui_slider_n4_value = document.getElementById("ui_slider_n4_value");
+          ui_slider_n4.noUiSlider.on('update', function (values, handle) {
+              ui_slider_n4_value.innerHTML = values[handle];
+          });
+
+          var ui_slider_n5_value = document.getElementById("ui_slider_n5_value");
+          ui_slider_n5.noUiSlider.on('update', function (values, handle) {
+              ui_slider_n5_value.innerHTML = values[handle];
+              ui_slider_n7.noUiSlider.updateOptions({
+                range: {
+                    'min': [1],
+                    'max': [parseInt(values[handle])]
+                }
+              });
+              $("#n7_text").attr("max",values[handle]);
+          });
+
+          var ui_slider_n6_value = document.getElementById("ui_slider_n6_value");
+          ui_slider_n6.noUiSlider.on('update', function (values, handle) {
+              ui_slider_n6_value.innerHTML = values[handle];
+          });
+
+          var ui_slider_n7_value = document.getElementById("ui_slider_n7_value");
+          ui_slider_n7.noUiSlider.on('update', function (values, handle) 
+          {
+              ui_slider_n7_value.innerHTML = values[handle];
+          });
+          var ui_slider_n9_value = document.getElementById("ui_slider_n9_value");
+          ui_slider_n9.noUiSlider.on('update', function (values, handle) 
+          {
+              ui_slider_n9_value.innerHTML = values[handle];
+          });
+
+          var ui_slider_n13_value = document.getElementById("ui_slider_n13_value");
+          ui_slider_n13.noUiSlider.on('update', function (values, handle) {
+              ui_slider_n13_value.innerHTML = values[handle];
+          });
+
+          var ui_slider_n14_value = document.getElementById("ui_slider_n14_value");
+          ui_slider_n14.noUiSlider.on('update', function (values, handle) 
+          {
+              ui_slider_n14_value.innerHTML = values[handle];
+          });
+          var ui_slider_n15_value = document.getElementById("ui_slider_n15_value");
+          ui_slider_n15.noUiSlider.on('update', function (values, handle) 
+          {
+              ui_slider_n15_value.innerHTML = values[handle];
+          });
+          var ui_slider_n17_value = document.getElementById("ui_slider_n17_value");
+          ui_slider_n17.noUiSlider.on('update', function (values, handle) 
+          {
+              ui_slider_n17_value.innerHTML = values[handle];
+          });
+
+
           $(".noUi-marker-sub").removeClass("noUi-marker-sub").addClass("noUi-marker-large");
           $(".noUi-value-sub").removeClass("noUi-value-sub").addClass("noUi-value-large");
         };
@@ -566,94 +1116,172 @@
 
         function f_result_init()
         {
-          var dres_arr_q1=[30,20,30,45,15,40,20,20,50,30,50,30,40,100,60,20,30,20];
-          var dres_q1=0;
+          var dn1=0;
+          var dn2=0;
+          var dn3=0;
+          var dn4=0;
+          var dn5=0;
+          var dn6=0;
+          var dn7=0;
+          var dn8=0;
+          var dn9=0;
+          var dn10=0;
+          var dn11=0;
+          var dn12=0;
+          var dn13=0;
+          var dn14=0;
+          var dn15=0;
+          var dn16=0;
+          var dn17=0;
 
-          for (var i = 1; i < 18; i++) 
+          var dn_email="";
+          var dn_tel="";
+          var dn_name="";
+          var dn_descr="";
+
+          switch($(".n1_v1_selected").parent().prop("id"))
           {
-            if($("#p1_q"+i.toString()).is(":checked")==true)
-            {
-              dres_q1=dres_q1+dres_arr_q1[i-1];
-            }   
+            case "n1_v1":
+              dn1=1;
+              break;
+            case "n1_v2":
+              dn1=2;
+              break;
+            case "n1_v3":
+              dn1=3;
+              break;
+            case "n1_v4":
+              dn1=4;
+              break;
+            case "n1_v5":
+              dn1=5;
+              break;
           };
-          dres_q1=dres_q1*1000;
 
-          var dres_arr_q2=ui_slider_1.noUiSlider.get();
+          dn2=ui_slider_n2.noUiSlider.get();
+          dn3=ui_slider_n3.noUiSlider.get();
+          dn4=ui_slider_n4.noUiSlider.get();
+          dn5=ui_slider_n5.noUiSlider.get();
+          dn6=ui_slider_n6.noUiSlider.get();
+          dn7=ui_slider_n7.noUiSlider.get();
+
+          if($("#n8_v1").checked)
+          {
+            dn8=1;
+          }
+          else if($("#n8_v2").checked)
+          {
+            dn8=2;
+          }
+          else if($("#n8_v3").checked)
+          {
+            dn8=3;
+          };
+          dn9=ui_slider_n9.noUiSlider.get();
+
+          if($("#n10_v1").checked)
+          {
+            dn10=1;
+          }
+          else if($("#n10_v2").checked)
+          {
+            dn10=2;
+          };
+          switch($(".n11_v1_selected").parent().prop("id"))
+          {
+            case "n11_v1":
+              dn11=1;
+              break;
+            case "n11_v2":
+              dn11=2;
+              break;
+            case "n11_v3":
+              dn11=3;
+              break;
+          };
+          switch($(".n12_v1_selected").parent().prop("id"))
+          {
+            case "n12_v1":
+              dn12=1;
+              break;
+            case "n12_v2":
+              dn12=2;
+              break;
+          };
+          dn13=ui_slider_n13.noUiSlider.get();
+          dn14=ui_slider_n14.noUiSlider.get();
+          dn15=ui_slider_n15.noUiSlider.get();
+
+          //dn16=ui_slider_n16.noUiSlider.get();
+          switch($(".n16_v1_selected").parent().prop("id"))
+          {
+            case "n16_v1":
+              dn16=1;
+              break;
+            case "n16_v2":
+              dn16=2;
+              break;
+          };
+
+          dn17=ui_slider_n17.noUiSlider.get();
+
+          dn_email=$("#n_email").val();
+          dn_tel=$("#n_tel").val();
+          dn_name=$("#n_name").val();
+          dn_descr=$("#n_descr").val();
+
+          var ddat={
+            "n1":dn1,"n2":dn2,"n3":dn3,"n4":dn4,"n5":dn5,"n6":dn6,"n7":dn7,"n8":dn8,"n9":dn9,"n10":dn10,"n11":dn11,"n12":dn12,
+            "n13":dn13,"n14":dn14,"n15":dn15,"n16":dn16,"n17":dn17,"n18":dn_email,"n19":dn_tel,"n20":dn_name,"n21":dn_descr
+          };
+
+          var url = "https://docs.google.com/forms/d/1FAIpQLSfqyXfbUho-5C8kzpDTCijka0XfzYH0vmmBd2d7IOC5IMM-eA/formResponse";
+          console.log("<--ddat=",ddat);
+
+          $.ajax({
+            url: url,
+            data: ddat,
+            type: "POST",
+            dataType: "xml",
+            statusCode: {
+                0: function() {
+                    //Success message
+                    console.log("<--ok1");
+                },
+                200: function() {
+                    //Success Message
+                    console.log("<--ok2");
+                }
+            }
+          });
+
          
-          if(dres_arr_q2==1 || dres_arr_q2==2 || dres_arr_q2==3)
-          {
-            dres_q1=dres_q1*0.4;
-          }
 
-          if(dres_arr_q2==4 || dres_arr_q2==5)
-          {
-            dres_q1=dres_q1*0.7;
-          }
 
-          if(dres_arr_q2==6 || dres_arr_q2==7 || dres_arr_q2==8)
-          {
-            dres_q1=dres_q1*1;
-          }
 
-          if($("#p3_q1").is(":checked")==true)
-          {
-            dres_q1=dres_q1*1.3;
-          }
-
-          var dres_arr_q4=ui_slider_2.noUiSlider.get();
-
-          switch(parseInt(dres_arr_q4,10))
-          {
-            case 1:
-              dres_q1=dres_q1*1;
-              break;
-            case 2:
-              dres_q1=dres_q1*2;
-              break;
-            case 3:
-              dres_q1=dres_q1*3;
-              break;
-            case 4:
-              dres_q1=dres_q1*4;
-              break;
-            case 5:
-              dres_q1=dres_q1*5;
-              break;
-            case 6:
-              dres_q1=dres_q1*6;
-              break;
-            case 7:
-              dres_q1=dres_q1*7;
-              break;
-            case 8:
-              dres_q1=dres_q1*8;
-              break;
-          }
-
-          $("#ui_result_sum").empty();
-          $("#ui_result_sum").append(dres_q1.toString());
         };
 
-        function f_show_msg(did_page) 
-        {
-          if(dcur_page==1)
-          {
-            if($("#"+did_page+" input:checked").length==0 && nrepeate==0)
-            {
-              $("#ui_msg_quest").addClass("ui_msg_quest");
-              $("#ui_msg_quest").toast("show");
-              nrepeate=1;
-            }
-            else
-            {
-              drepeate=true;
-            }
-          }
-          else
-          {
-            drepeate=true;
-          }
-        } 
+
+        // function f_show_msg(did_page) 
+        // {
+        //   if(dcur_page==1)
+        //   {
+        //     if($("#"+did_page+" input:checked").length==0 && nrepeate==0)
+        //     {
+        //       $("#ui_msg_quest").addClass("ui_msg_quest");
+        //       $("#ui_msg_quest").toast("show");
+        //       nrepeate=1;
+        //     }
+        //     else
+        //     {
+        //       drepeate=true;
+        //     }
+        //   }
+        //   else
+        //   {
+        //     drepeate=true;
+        //   }
+        // } 
 
 
     </script>
