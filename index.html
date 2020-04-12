@@ -1244,6 +1244,12 @@
             type: "POST",
             dataType: "xml",
             crossDomain: true,
+            headers: {
+              // Set any custom headers here.
+              // If you set any non-simple headers, your server must include these
+              // headers in the 'Access-Control-Allow-Headers' response header.
+              "Access-Control-Allow-Origin": "*"
+            },
             statusCode: {
                 0: function() {
                     //Success message
