@@ -1238,35 +1238,60 @@
           var url = "https://docs.google.com/forms/d/1FAIpQLSfqyXfbUho-5C8kzpDTCijka0XfzYH0vmmBd2d7IOC5IMM-eA/formResponse";
           console.log("<--ddat=",ddat);
 
-          $.ajax({
-            url: url,
-            data: ddat,
-            type: "POST",
-            dataType: "xml",
-            crossDomain: true,
-            headers: {
-              // Set any custom headers here.
-              // If you set any non-simple headers, your server must include these
-              // headers in the 'Access-Control-Allow-Headers' response header.
-              "Access-Control-Allow-Origin": "*"
-            },
-            statusCode: {
-                0: function() {
-                    //Success message
-                    console.log("<--ok1");
-                },
-                200: function() {
-                    //Success Message
-                    console.log("<--ok2");
-                }
-            }
+          postData(url,ddat)
+          .then((data) => {
+            console.log(data); // JSON data parsed by `response.json()` call
           });
+
+          // $.ajax({
+          //   url: url,
+          //   data: ddat,
+          //   type: "POST",
+          //   dataType: "xml",
+          //   crossDomain: true,
+          //   headers: {
+          //     // Set any custom headers here.
+          //     // If you set any non-simple headers, your server must include these
+          //     // headers in the 'Access-Control-Allow-Headers' response header.
+          //     "Access-Control-Allow-Origin": "*"
+          //   },
+          //   statusCode: {
+          //       0: function() {
+          //           //Success message
+          //           console.log("<--ok1");
+          //       },
+          //       200: function() {
+          //           //Success Message
+          //           console.log("<--ok2");
+          //       }
+          //   }
+          // });
 
          
 
 
 
         };
+
+        async function postData(url = '', data = {}) {
+  // Default options are marked with *
+  const response = await fetch(url, {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'cors', // no-cors, *cors, same-origin
+    cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'same-origin', // include, *same-origin, omit
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *client
+    body: JSON.stringify(data) // body data type must match "Content-Type" header
+  });
+  return await response.json(); // parses JSON response into native JavaScript objects
+}
+
+
 
 
         // function f_show_msg(did_page) 
