@@ -72,11 +72,6 @@
         right: 0;
       }
 
-      .ui_msg_box_hide
-      {
-        height: 0;
-      }
-
       .btn-test:hover, .btn-test:active, .btn-test:focus {
         color: #c3c8ce !important;
       }
@@ -130,14 +125,28 @@
               <div class="card shadow-none">
                 <div class="card-body">
                   <h5 class="card-title">Выбор типа строения</h5>
-                  <!-- <h5 class="card-subtitle mb-2 text-muted" style="padding-top: 2%;">Выберите задачи, которые вы хотели бы выполнять</h5> -->
                   <p class="card-text"> 
                     <div class="row row-cols-2">
-                      <div class="col col-form-label" id="n1_v1"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n1_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
-                      <div class="col col-form-label" id="n1_v2"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n1_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
-                      <div class="col col-form-label" id="n1_v3"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n1_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
-                      <div class="col col-form-label" id="n1_v4"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n1_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
-                      <div class="col col-form-label" id="n1_v5"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n1_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
+                      <div class="col col-form-label" id="n1_v1">
+                        <img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n1_var rounded mx-auto d-block img-thumbnail" alt="...">
+                        <figcaption class="figure-caption">одноэтажный дом без рубленных фронтонов</figcaption>
+                      </div>
+                      <div class="col col-form-label" id="n1_v2">
+                        <img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n1_var rounded mx-auto d-block img-thumbnail" alt="...">
+                        <figcaption class="figure-caption">одноэтажный дом с рубленными фронтонами</figcaption>
+                      </div>
+                      <div class="col col-form-label" id="n1_v3">
+                        <img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n1_var rounded mx-auto d-block img-thumbnail" alt="...">
+                        <figcaption class="figure-caption">двухэтажный дом мансардного типа</figcaption>
+                      </div>
+                      <div class="col col-form-label" id="n1_v4">
+                        <img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n1_var rounded mx-auto d-block img-thumbnail" alt="...">
+                        <figcaption class="figure-caption">двухэтажный дом без рубленных фронтонов</figcaption>
+                      </div>
+                      <div class="col col-form-label" id="n1_v5">
+                        <img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n1_var rounded mx-auto d-block img-thumbnail" alt="...">
+                        <figcaption class="figure-caption">двухэтажный дом с рубленными фронтонами</figcaption>
+                      </div>
                     </div>
                   </p>
                 </div>
@@ -153,7 +162,6 @@
                     <div class="row">
                       <div class="col">
                         <div id="ui_slider_n2"></div>
-                        <span id="ui_slider_n2_value"></span>
                         <div class="custom-control custom-switch">
                           <input type="checkbox" class="custom-control-input" id="ui_n2_manual">
                           <label class="custom-control-label" for="ui_n2_manual">Указать вручную</label>
@@ -172,7 +180,6 @@
                   <h5 class="card-title">Кол-во всех помещений 1 этажа без террас.</h5>
                   <p class="card-text" style="padding-top: 5%;">
                     <div id="ui_slider_n3"></div>
-                    <span id="ui_slider_n3_value"></span>
                   </p>
                 </div>
               </div>
@@ -184,7 +191,6 @@
                     <div class="row">
                       <div class="col">
                         <div id="ui_slider_n4"></div>
-                        <span id="ui_slider_n4_value"></span>
                         <div class="custom-control custom-switch">
                           <input type="checkbox" class="custom-control-input" id="ui_n4_manual">
                           <label class="custom-control-label" for="ui_n4_manual">Указать вручную</label>
@@ -209,7 +215,6 @@
                   <div class="row">
                     <div class="col">
                       <div id="ui_slider_n5"></div>
-                      <span id="ui_slider_n5_value"></span>
                       <div class="custom-control custom-switch">
                         <input type="checkbox" class="custom-control-input" id="ui_n5_manual">
                         <label class="custom-control-label" for="ui_n5_manual">Указать вручную</label>
@@ -228,7 +233,6 @@
                   <h5 class="card-title">Кол-во всех помещений 2 этажа без балконов</h5>
                   <p class="card-text" style="padding-top: 5%;">
                     <div id="ui_slider_n6"></div>
-                    <span id="ui_slider_n6_value"></span>
                   </p>
                 </div>
               </div>
@@ -240,7 +244,6 @@
                     <div class="row">
                       <div class="col">
                         <div id="ui_slider_n7"></div>
-                        <span id="ui_slider_n7_value"></span>
                         <div class="custom-control custom-switch">
                           <input type="checkbox" class="custom-control-input" id="ui_n7_manual">
                           <label class="custom-control-label" for="ui_n7_manual">Указать вручную</label>
@@ -285,7 +288,6 @@
                   <h5 class="card-title">Диаметр, см</h5>
                   <p class="card-text" style="padding-top: 5%;">
                     <div id="ui_slider_n9"></div>
-                    <span id="ui_slider_n9_value"></span>
                   </p>
                 </div>
               </div>
@@ -312,9 +314,18 @@
                   <h5 class="card-title">Технология</h5>
                   <p class="card-text"> 
                     <div class="row row-cols-3">
-                      <div class="col" id="n11_v1"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n11_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
-                      <div class="col" id="n11_v2"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n11_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
-                      <div class="col" id="n11_v3"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n11_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
+                      <div class="col" id="n11_v1">
+                        <img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n11_var rounded mx-auto d-block img-thumbnail" alt="...">
+                        <figcaption class="figure-caption">русская рубка</figcaption>
+                      </div>
+                      <div class="col" id="n11_v2">
+                        <img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n11_var rounded mx-auto d-block img-thumbnail" alt="...">
+                        <figcaption class="figure-caption">канадская рубка</figcaption>
+                      </div>
+                      <div class="col" id="n11_v3">
+                        <img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n11_var rounded mx-auto d-block img-thumbnail" alt="...">
+                        <figcaption class="figure-caption">имитация канадской рубки</figcaption>
+                      </div>
                     </div>
                   </p>
                 </div>
@@ -325,8 +336,14 @@
                   <h5 class="card-title">Выпуски</h5>
                   <p class="card-text"> 
                     <div class="row row-cols-2">
-                      <div class="col" id="n12_v1"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n12_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
-                      <div class="col" id="n12_v2"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n12_var rounded mx-auto d-block img-thumbnail" alt="..."></div>
+                      <div class="col" id="n12_v1">
+                        <img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n12_var rounded mx-auto d-block img-thumbnail" alt="...">
+                        <figcaption class="figure-caption">обыкновенные</figcaption>
+                      </div>
+                      <div class="col" id="n12_v2">
+                        <img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n12_var rounded mx-auto d-block img-thumbnail" alt="...">
+                        <figcaption class="figure-caption">дикие</figcaption>
+                      </div>
                     </div>
                   </p>
                 </div>
@@ -340,7 +357,6 @@
                   <h5 class="card-title">Высота первого этажа после усадки</h5>
                   <p class="card-text" style="padding-top: 5%;">
                     <div id="ui_slider_n13"></div>
-                    <span id="ui_slider_n13_value"></span>
                   </p>
                 </div>
               </div>
@@ -350,7 +366,6 @@
                   <h5 class="card-title">Высота второго этажа после усадки</h5>
                   <p class="card-text" style="padding-top: 5%;">
                     <div id="ui_slider_n14"></div>
-                    <span id="ui_slider_n14_value"></span>
                   </p>
                 </div>
               </div>
@@ -359,7 +374,6 @@
                   <h5 class="card-title">Высота короткой стены после усадки</h5>
                   <p class="card-text" style="padding-top: 5%;">
                     <div id="ui_slider_n15"></div>
-                    <span id="ui_slider_n15_value"></span>
                   </p>
                 </div>
               </div>
@@ -390,7 +404,6 @@
                     <div class="row row-cols-2">
                       <div class="col" id="n1_v1">
                         <div id="ui_slider_n17"></div>
-                        <span id="ui_slider_n17_value"></span>
                       </div>
                       <div class="col" id="n17_img"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="rounded mx-auto d-block img-thumbnail" alt="..."></div>
                     </div>
@@ -430,15 +443,6 @@
           </div>
 
           <div class="row float-right" id="ui_pagination" style="display: none; padding-left: 35px;padding-right: 35px;">
-            <!-- <div class="align-items-center d-flex" style="width: 250px;">
-              <div style="width: 100px;">
-                Готово: 
-                <span><b id="ui_progress_procents">0%</b></span>
-              </div>
-              <div class="progress" style="height: 5px;width: 150px;">
-                <div id="ui_progress" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div> -->
             <div class="align-items-center col d-flex">
               <button type="button" class="btn btn-test ui_test_prev" style="margin-top: 0px;"><i class="fa fa-chevron-left"></i></button>
               <button type="button" class="btn btn-test ui_test_next" style="margin-top: 0px;">Далее</button>
@@ -447,21 +451,7 @@
           </div>
     </div>
          
-    </div>
-
-  <!-- <div aria-live="polite" aria-atomic="true" class="ui_msg_box_hide" id="ui_msg_box_wrapper" style="display: content">
-    <div id="ui_msg_quest" class="toast ui_msg_box_hide" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
-      <div class="toast-header">
-        <strong class="mr-auto">Сообщение</strong>
-        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      </div>
-      <div class="toast-body">
-        Вы не выбрали ни одного варианта.
-      </div>
-    </div>
-  </div> -->
-
-  <div id="ui_back" style="display: none;">
+  </div>
   </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -476,10 +466,6 @@
     <script type="text/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
 
      <script type="text/javascript">
-      var dtime_start = new Date();
-
-      var res_n1=0;
-
       function f_ui_init()
       {
           $(".ui_pages").hide();
@@ -607,9 +593,6 @@
                 case "ui_page3":
                   did_next_page="ui_page2";
                   break;
-                // case "ui_page4":
-                //   did_next_page="ui_page5";
-                //   break;
                 case "ui_page5":
                   did_next_page="ui_page4";
                   break;
@@ -689,6 +672,15 @@
               $("#n8_v2").prop("checked",false);
               $("#n8_v3").prop("checked",false);
               $("#ui_page4_option1").show();
+
+              ui_slider_n9.noUiSlider.updateOptions({
+                range: {
+                    'min': [28],
+                    'max': [42]
+                }
+              });
+              ui_slider_n9.noUiSlider.set([28]);
+
             }
           });
           $(document).on("change","#n8_v2",function(event)
@@ -698,6 +690,14 @@
               $("#n8_v1").prop("checked",false);
               $("#n8_v3").prop("checked",false);
               $("#ui_page4_option1").show();
+
+              ui_slider_n9.noUiSlider.updateOptions({
+                range: {
+                    'min': [34],
+                    'max': [60]
+                }
+              });
+              ui_slider_n9.noUiSlider.set([34]);
             }
           });
           $(document).on("change","#n8_v3",function(event)
@@ -707,6 +707,14 @@
               $("#n8_v1").prop("checked",false);
               $("#n8_v2").prop("checked",false);
               $("#ui_page4_option1").hide();
+
+              ui_slider_n9.noUiSlider.updateOptions({
+                range: {
+                    'min': [34],
+                    'max': [60]
+                }
+              });
+              ui_slider_n9.noUiSlider.set([34]);
 
             }
           });
@@ -840,7 +848,8 @@
               pips: {
                   mode: 'range',
                   density: 1
-              }
+              },
+              tooltips: [wNumb({decimals: 0})],
           });
          
 
@@ -856,7 +865,8 @@
               pips: {
                   mode: 'range',
                   density: 1
-              }
+              },
+              tooltips: [wNumb({decimals: 0})],
           });
           
 
@@ -872,7 +882,8 @@
               pips: {
                   mode: 'range',
                   density: 1
-              }
+              },
+              tooltips: [wNumb({decimals: 0})],
           });
          
 
@@ -888,7 +899,8 @@
               pips: {
                   mode: 'range',
                   density: 1
-              }
+              },
+              tooltips: [wNumb({decimals: 0})],
           });
           var ui_slider_n6 = document.getElementById("ui_slider_n6");
           noUiSlider.create(ui_slider_n6, {
@@ -902,7 +914,8 @@
               pips: {
                   mode: 'range',
                   density: 1
-              }
+              },
+              tooltips: [wNumb({decimals: 0})],
           });
           var ui_slider_n7 = document.getElementById("ui_slider_n7");
           noUiSlider.create(ui_slider_n7, {
@@ -916,7 +929,8 @@
               pips: {
                   mode: 'range',
                   density: 1
-              }
+              },
+              tooltips: [wNumb({decimals: 0})],
           });
 
           var ui_slider_n9 = document.getElementById("ui_slider_n9");
@@ -931,7 +945,8 @@
               pips: {
                   mode: 'range',
                   density: 1
-              }
+              },
+              tooltips: [wNumb({decimals: 0})],
           });
           var ui_slider_n13 = document.getElementById("ui_slider_n13");
           noUiSlider.create(ui_slider_n13, {
@@ -948,7 +963,8 @@
                   format: wNumb({
                   decimals: 2
                 })
-              }
+              },
+              tooltips: [wNumb({decimals: 1})],
               
           });
           var ui_slider_n14 = document.getElementById("ui_slider_n14");
@@ -966,7 +982,8 @@
                   format: wNumb({
                   decimals: 2
                 })
-              }
+              },
+              tooltips: [wNumb({decimals: 1})],
           });
           var ui_slider_n15 = document.getElementById("ui_slider_n15");
           noUiSlider.create(ui_slider_n15, {
@@ -983,7 +1000,8 @@
                   format: wNumb({
                   decimals: 2
                 })
-              }
+              },
+              tooltips: [wNumb({decimals: 1})],
           });
           var ui_slider_n17 = document.getElementById("ui_slider_n17");
           noUiSlider.create(ui_slider_n17, {
@@ -997,14 +1015,13 @@
               pips: {
                   mode: 'range',
                   density: 1
-              }
+              },
+              tooltips: [wNumb({decimals: 0})],
           });
 
-
-          var ui_slider_n2_value = document.getElementById("ui_slider_n2_value");
           ui_slider_n2.noUiSlider.on('update', function (values, handle) 
           {
-              ui_slider_n2_value.innerHTML = values[handle];
+              //ui_slider_n2_value.innerHTML = parseInt(values[handle]);
               ui_slider_n4.noUiSlider.updateOptions({
                 range: {
                     'min': [1],
@@ -1014,19 +1031,8 @@
               $("#n4_text").attr("max",values[handle]);
           });
 
-          var ui_slider_n3_value = document.getElementById("ui_slider_n3_value");
-          ui_slider_n3.noUiSlider.on('update', function (values, handle) {
-              ui_slider_n3_value.innerHTML = values[handle];
-          });
-
-          var ui_slider_n4_value = document.getElementById("ui_slider_n4_value");
-          ui_slider_n4.noUiSlider.on('update', function (values, handle) {
-              ui_slider_n4_value.innerHTML = values[handle];
-          });
-
-          var ui_slider_n5_value = document.getElementById("ui_slider_n5_value");
           ui_slider_n5.noUiSlider.on('update', function (values, handle) {
-              ui_slider_n5_value.innerHTML = values[handle];
+             // ui_slider_n5_value.innerHTML = parseInt(values[handle]);
               ui_slider_n7.noUiSlider.updateOptions({
                 range: {
                     'min': [1],
@@ -1036,52 +1042,15 @@
               $("#n7_text").attr("max",values[handle]);
           });
 
-          var ui_slider_n6_value = document.getElementById("ui_slider_n6_value");
-          ui_slider_n6.noUiSlider.on('update', function (values, handle) {
-              ui_slider_n6_value.innerHTML = values[handle];
-          });
-
-          var ui_slider_n7_value = document.getElementById("ui_slider_n7_value");
-          ui_slider_n7.noUiSlider.on('update', function (values, handle) 
-          {
-              ui_slider_n7_value.innerHTML = values[handle];
-          });
-          var ui_slider_n9_value = document.getElementById("ui_slider_n9_value");
-          ui_slider_n9.noUiSlider.on('update', function (values, handle) 
-          {
-              ui_slider_n9_value.innerHTML = values[handle];
-          });
-
-          var ui_slider_n13_value = document.getElementById("ui_slider_n13_value");
-          ui_slider_n13.noUiSlider.on('update', function (values, handle) {
-              ui_slider_n13_value.innerHTML = values[handle];
-          });
-
-          var ui_slider_n14_value = document.getElementById("ui_slider_n14_value");
-          ui_slider_n14.noUiSlider.on('update', function (values, handle) 
-          {
-              ui_slider_n14_value.innerHTML = values[handle];
-          });
-          var ui_slider_n15_value = document.getElementById("ui_slider_n15_value");
-          ui_slider_n15.noUiSlider.on('update', function (values, handle) 
-          {
-              ui_slider_n15_value.innerHTML = values[handle];
-          });
-          var ui_slider_n17_value = document.getElementById("ui_slider_n17_value");
-          ui_slider_n17.noUiSlider.on('update', function (values, handle) 
-          {
-              ui_slider_n17_value.innerHTML = values[handle];
-          });
-
-
           $(".noUi-marker-sub").removeClass("noUi-marker-sub").addClass("noUi-marker-large");
           $(".noUi-value-sub").removeClass("noUi-value-sub").addClass("noUi-value-large");
         };
 
         $(document).ready(function() 
         {
+          f_init_sliders(); 
           f_ui_init();  
-          f_init_sliders();             
+                      
         });
 
         function f_result_init()
@@ -1269,32 +1238,6 @@
            //});
 
         };
-
-
-
-
-        // function f_show_msg(did_page) 
-        // {
-        //   if(dcur_page==1)
-        //   {
-        //     if($("#"+did_page+" input:checked").length==0 && nrepeate==0)
-        //     {
-        //       $("#ui_msg_quest").addClass("ui_msg_quest");
-        //       $("#ui_msg_quest").toast("show");
-        //       nrepeate=1;
-        //     }
-        //     else
-        //     {
-        //       drepeate=true;
-        //     }
-        //   }
-        //   else
-        //   {
-        //     drepeate=true;
-        //   }
-        // } 
-
-
     </script>
     
   </body>
