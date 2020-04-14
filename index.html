@@ -564,7 +564,6 @@
             if(did_cur_page=="ui_page2")
             {
               var dn1=$(".n1_v1_selected").parent().prop("id");
-              console.log("<--dn1=",dn1);
               if(dn1=="n1_v3" || dn1=="n1_v4" || dn1=="n1_v5")
               {
                 did_next_page="ui_page3";
@@ -636,7 +635,6 @@
             if(did_cur_page=="ui_page4")
             {
               var dn1=$(".n1_v1_selected").parent().prop("id");
-              console.log("<--dn1=",dn1);
               if(dn1=="n1_v3" || dn1=="n1_v4" || dn1=="n1_v5")
               {
                 did_next_page="ui_page3";
@@ -1247,14 +1245,8 @@
             data: ddat,
             type: "POST",
             contentType:"application/json",
-            
-            //dataType: "xml",
             dataType: "jsonp",
-            // xhrFields: {
-            //    withCredentials: true
-            // },
             cors: true ,
-            // secure: true,
             headers: {
                 'Access-Control-Allow-Origin': '*',
             },
@@ -1263,43 +1255,25 @@
             })
             .done(function(jsondata, status, xhr)
             {
-              //console.log(jsondata.x[0]);
-              //console.log(status);
-              //console.log(xhr.status);
               if(xhr.status==200)
               {
                 alert("Данные успешно отправлены!");
+              }
+              else
+              {
+                alert("Произошла ошибка!");
               }
             }).fail(function(xhr, status, error)
             {
-              console.log("error",xhr,status,error,"|",xhr.status);
               if(xhr.status==200)
               {
                 alert("Данные успешно отправлены!");
               }
+              else
+              {
+                alert("Произошла ошибка!");
+              }
             });
-
-
-
-            // success: function() {
-            //   alert("Результат успешно сохранён!")
-            // },
-            // error: function() {
-            //   alert("Произошла ошибка!")
-            // }
-            // statusCode: 
-            // {
-            //   0: function() 
-            //   {
-            //     alert("Success!");
-            //   },
-            //   200: function() {
-            //      //Success Message
-            //      alert("Success!");
-            //    }
-            //  }
-           //});
-
         };
     </script>
     
