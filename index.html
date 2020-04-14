@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/nouislider@14.1.1/distribute/nouislider.css">
 
     <title>test</title>
@@ -16,6 +16,10 @@
       .ui_test_next, .ui_test_prev 
       {
         margin-top: 30px;
+      }
+      .ui_test_prev
+      {
+        margin-right: 3px;
       }
       .ui_page1_quest
       {
@@ -29,16 +33,17 @@
       .btn-test
       {
         color: #fff;
-        background-color: #411769!important;
+        background-color: #ffb961!important;
+        outline: none!important;
       }
       .pagination.pg-blue .page-item.active .page-link 
       {
-        background-color: #411769!important;
+        background-color: #ffb961!important;
       }
       .custom-control-input:checked~.custom-control-label::before {
         color: #fff;
-        border-color: #411769!important;
-        background-color: #411769!important;
+        border-color: #ffb961!important;
+        background-color: #ffb961!important;
       }
       .custom-checkbox
       {
@@ -75,7 +80,42 @@
       .btn-test:hover, .btn-test:active, .btn-test:focus {
         color: #c3c8ce !important;
       }
-      .noUi-marker
+     
+      .main_div
+      {
+        height: 90vh;
+      }
+      #ui_main_row
+      {
+        height: inherit;
+      }
+
+      .n1_v1_selected, .n11_v1_selected, .n12_v1_selected
+      {
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        /*padding: 7px;*/
+      }
+      .ui_pages
+      {
+        height: inherit;
+        overflow: auto;
+      }
+      .no_border
+      {
+        border:0!important;
+      }
+      input:focus{
+        outline:none!important;
+      }
+      .form-control {
+  outline: none!important;
+  }
+
+
+
+
+
+       .noUi-marker
       {
         display: none !important;
         height: 0 !important;
@@ -88,31 +128,59 @@
           padding-left: 0px !important;
       }
       .noUi-connect {
-          background: #411769!important;
-      }
-      .main_div
-      {
-        height: 90vh;
-      }
-      #ui_main_row
-      {
-        height: inherit;
+          background: #ffb961!important;
       }
       .noUi-touch-area {
         height: 100%;
         width: 100%;
-        background-color: #411769!important;
+        background-color: #ffb961!important;
+        border-radius: 1.5rem!important;
       }
-      .n1_v1_selected, .n11_v1_selected, .n12_v1_selected
+
+      .noUi-target {
+        background: #FAFAFA;
+        border-radius: 4px;
+        border: 1px solid #D3D3D3;
+        box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
+      }
+      .noUi-connects {
+        border-radius: 3px;
+      }
+      .noUi-connect {
+        background: #3FB8AF;
+      }
+      .noUi-draggable {
+        cursor: ew-resize;
+      }
+      .noUi-vertical .noUi-draggable {
+        cursor: ns-resize;
+      }
+      .noUi-handle {
+        border: 1px solid #D9D9D9;
+        border-radius: 3px;
+        background: #FFF;
+        cursor: default;
+        box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #EBEBEB, 0 3px 6px -3px #BBB;
+      }
+      .noUi-active {
+        box-shadow: inset 0 0 1px #FFF, inset 0 1px 7px #DDD, 0 3px 6px -3px #BBB;
+        border-radius: 1.5rem!important;
+      }
+
+      .noUi-horizontal .noUi-tooltip 
       {
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        /*padding: 7px;*/
+        border-radius: 0.5rem!important;
       }
-      .ui_pages
+      .noUi-horizontal .noUi-handle {
+        border-radius: 1.5rem!important;
+      }
+      .noUi-handle
       {
-        height: inherit;
-        overflow: auto;
+        border-radius: 1.5rem!important;
+        outline: none!important;
       }
+
+
     </style>
     
   </head>
@@ -122,7 +190,7 @@
         <div id="ui_main_row" class="row">
 
             <div class="col text-center s12 m6 ui_pages ui_page_current" id="ui_page1" style="display: none">
-              <div class="card shadow-none">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Выбор типа строения</h5>
                   <p class="card-text"> 
@@ -155,10 +223,10 @@
 
             <div class="col text-center s12 m6 ui_pages" id="ui_page2" style="display: none">
 
-              <div class="card shadow-none">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Площадь всех помещений 1 этажа без террас, кв. м.</h5>
-                  <p class="card-text" style="padding-top: 5%;">
+                  <p class="card-text" style="padding-top: 3%;">
                     <div class="row">
                       <div class="col">
                         <div id="ui_slider_n2"></div>
@@ -175,19 +243,19 @@
                 </div>
               </div>
 
-              <div class="card shadow-none">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Кол-во всех помещений 1 этажа без террас.</h5>
-                  <p class="card-text" style="padding-top: 5%;">
+                  <p class="card-text" style="padding-top: 3%;">
                     <div id="ui_slider_n3"></div>
                   </p>
                 </div>
               </div>
 
-              <div class="card shadow-none">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Площадь террас, кв.м.</h5>
-                  <p class="card-text" style="padding-top: 5%;">
+                  <p class="card-text" style="padding-top: 3%;">
                     <div class="row">
                       <div class="col">
                         <div id="ui_slider_n4"></div>
@@ -208,10 +276,10 @@
 
             <div class="col text-center s12 m6 ui_pages" id="ui_page3" style="display: none">
 
-              <div class="card shadow-none">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Площадь всех помещений 2 этажа без балконов, кв. м.</h5>
-                  <p class="card-text" style="padding-top: 5%;">
+                  <p class="card-text" style="padding-top: 3%;">
                   <div class="row">
                     <div class="col">
                       <div id="ui_slider_n5"></div>
@@ -228,19 +296,19 @@
                 </div>
               </div>
 
-              <div class="card shadow-none">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Кол-во всех помещений 2 этажа без балконов</h5>
-                  <p class="card-text" style="padding-top: 5%;">
+                  <p class="card-text" style="padding-top: 3%;">
                     <div id="ui_slider_n6"></div>
                   </p>
                 </div>
               </div>
 
-              <div class="card shadow-none">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Площадь балконов, кв.м.</h5>
-                  <p class="card-text" style="padding-top: 5%;">
+                  <p class="card-text" style="padding-top: 3%;">
                     <div class="row">
                       <div class="col">
                         <div id="ui_slider_n7"></div>
@@ -260,10 +328,10 @@
 
             <div class="col text-center s12 m6 ui_pages" id="ui_page4" style="display: none">
               
-              <div class="card shadow-none">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Порода древесины</h5>
-                  <p class="card-text" style="padding-top: 5%;">   
+                  <p class="card-text" style="padding-top: 3%;">   
                     <div class="container">
                       <div class="row">
                         <div class="col custom-control custom-checkbox border rounded ui_page_quest">
@@ -283,19 +351,19 @@
                 </div>
               </div>
 
-               <div class="card shadow-none">
+               <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Диаметр, см</h5>
-                  <p class="card-text" style="padding-top: 5%;">
+                  <p class="card-text" style="padding-top: 3%;">
                     <div id="ui_slider_n9"></div>
                   </p>
                 </div>
               </div>
 
-              <div class="card shadow-none" id="ui_page4_option1">
+              <div class="card shadow-none no_border" id="ui_page4_option1">
                 <div class="card-body">
                   <h5 class="card-title">Полтора венца закладные из лиственницы</h5>
-                  <p class="card-text" style="padding-top: 5%;">
+                  <p class="card-text" style="padding-top: 3%;">
                     <div class="row">
                       <div class="col custom-control custom-checkbox border rounded ui_page_quest">
                           <input type="checkbox" class="custom-control-input" id="n10_v1"><label class="custom-control-label" for="n10_v1">Да</label>
@@ -309,7 +377,7 @@
                 </div>
               </div>
 
-              <div class="card shadow-none">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Технология</h5>
                   <p class="card-text"> 
@@ -331,7 +399,7 @@
                 </div>
               </div>
 
-              <div class="card shadow-none">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Выпуски</h5>
                   <p class="card-text"> 
@@ -352,36 +420,36 @@
 
             <div class="col text-center s12 m6 ui_pages" id="ui_page5" style="display: none">
 
-              <div class="card shadow-none">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Высота первого этажа после усадки</h5>
-                  <p class="card-text" style="padding-top: 5%;">
+                  <p class="card-text" style="padding-top: 3%;">
                     <div id="ui_slider_n13"></div>
                   </p>
                 </div>
               </div>
 
-              <div class="card shadow-none">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Высота второго этажа после усадки</h5>
-                  <p class="card-text" style="padding-top: 5%;">
+                  <p class="card-text" style="padding-top: 3%;">
                     <div id="ui_slider_n14"></div>
                   </p>
                 </div>
               </div>
-              <div class="card shadow-none">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Высота короткой стены после усадки</h5>
-                  <p class="card-text" style="padding-top: 5%;">
+                  <p class="card-text" style="padding-top: 3%;">
                     <div id="ui_slider_n15"></div>
                   </p>
                 </div>
               </div>
 
-              <div class="card shadow-none">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Деревянные перекрытия фундамента</h5>
-                  <p class="card-text" style="padding-top: 5%;">
+                  <p class="card-text" style="padding-top: 3%;">
                     <div class="row">
                       <div class="col custom-control custom-checkbox border rounded ui_page_quest">
                           <input type="checkbox" class="custom-control-input" id="n16_v1"><label class="custom-control-label" for="n16_v1">Да</label>
@@ -397,7 +465,7 @@
             </div>
 
             <div class="col text-center s12 m6 ui_pages" id="ui_page6" style="display: none">
-              <div class="card shadow-none">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Угол наклона кровли</h5>
                   <p class="card-text"> 
@@ -413,7 +481,7 @@
             </div>
 
             <div class="col text-center s12 m6 ui_pages" id="ui_page7" style="display: none">
-              <div class="card shadow-none">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Ваш расчет будет отправлен вам на указанный электронный адрес в течение двух дней.</h5>
                   <p class="card-text"> 
@@ -455,15 +523,10 @@
   </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/js/mdb.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nouislider@14.1.1/distribute/nouislider.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js"></script>
-    <script type="text/javascript" src="https://smtpjs.com/v3/smtp.js"></script>
 
      <script type="text/javascript">
       function f_ui_init()
