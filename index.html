@@ -265,7 +265,7 @@
                         </div>
                       </div>
                       <div>
-                        <input type="number" min="1" max="2000" class="form-control ui_text_manual" id="n4_text" style="display: none">
+                        <input type="number" min="0" max="2000" class="form-control ui_text_manual" id="n4_text" style="display: none">
                       </div>
                     </div>
                   </p>
@@ -318,7 +318,7 @@
                         </div>
                       </div>
                       <div>
-                        <input type="number" min="1" max="2000" class="form-control ui_text_manual" id="n7_text" style="display: none">
+                        <input type="number" min="0" max="2000" class="form-control ui_text_manual" id="n7_text" style="display: none">
                       </div>
                     </div>
                   </p>
@@ -978,10 +978,10 @@
 
           var ui_slider_n4 = document.getElementById("ui_slider_n4");
           noUiSlider.create(ui_slider_n4, {
-              start: [1],
+              start: [0],
               step: 1,
               range: {
-                  'min': [1],
+                  'min': [0],
                   'max': [40]
               },
               connect: true,
@@ -1025,10 +1025,10 @@
           });
           var ui_slider_n7 = document.getElementById("ui_slider_n7");
           noUiSlider.create(ui_slider_n7, {
-              start: [1],
+              start: [0],
               step: 1,
               range: {
-                  'min': [1],
+                  'min': [0],
                   'max': [100]
               },
               connect: true,
@@ -1130,7 +1130,7 @@
               //ui_slider_n2_value.innerHTML = parseInt(values[handle]);
               ui_slider_n4.noUiSlider.updateOptions({
                 range: {
-                    'min': [1],
+                    'min': [0],
                     'max': [parseInt(values[handle])]
                 }
               });
@@ -1141,7 +1141,7 @@
              // ui_slider_n5_value.innerHTML = parseInt(values[handle]);
               ui_slider_n7.noUiSlider.updateOptions({
                 range: {
-                    'min': [1],
+                    'min': [0],
                     'max': [parseInt(values[handle])]
                 }
               });
@@ -1276,7 +1276,13 @@
           else if($("#n22_v2").is(":checked"))
           {
             dn22=2;
+            dn8=0;
+            dn10=0;
+            dn11=0;
+            dn12=0;
           };
+
+
 
           dn_email=$("#n_email").val();
           dn_tel=$("#n_tel").val();
@@ -1312,7 +1318,7 @@
             {
               if(xhr.status==200)
               {
-                alert("Данные успешно отправлены!");
+                alert("Ваш расчет будет отправлен вам на указанный электронный адрес на следующий будний день!");
               }
               else
               {
@@ -1322,7 +1328,7 @@
             {
               if(xhr.status==200)
               {
-                alert("Данные успешно отправлены!");
+                alert("Ваш расчет будет отправлен вам на указанный электронный адрес на следующий будний день!");
               }
               else
               {
