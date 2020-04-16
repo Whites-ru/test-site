@@ -327,8 +327,25 @@
             </div>
 
             <div class="col text-center s12 m6 ui_pages" id="ui_page4" style="display: none">
-              
+
               <div class="card shadow-none no_border">
+                <div class="card-body">
+                  <h5 class="card-title">Обработка бревна</h5>
+                  <p class="card-text" style="padding-top: 3%;">
+                    <div class="row">
+                      <div class="col custom-control custom-checkbox border rounded ui_page_quest">
+                          <input type="checkbox" class="custom-control-input" id="n22_v1"><label class="custom-control-label" for="n22_v1">ручная рубка</label>
+                      </div>
+                      <div class="col-sm-auto"></div>
+                      <div class="col custom-control custom-checkbox border rounded ui_page_quest">
+                          <input type="checkbox" class="custom-control-input" id="n22_v2"><label class="custom-control-label" for="n22_v2">оцилиндрованное бревно</label>
+                      </div>
+                    </div>
+                  </p>
+                </div>
+              </div>
+              
+              <div class="card shadow-none no_border ui_page4_option2">
                 <div class="card-body">
                   <h5 class="card-title">Порода древесины</h5>
                   <p class="card-text" style="padding-top: 3%;">   
@@ -377,7 +394,7 @@
                 </div>
               </div>
 
-              <div class="card shadow-none no_border">
+              <div class="card shadow-none no_border ui_page4_option2">
                 <div class="card-body">
                   <h5 class="card-title">Технология</h5>
                   <p class="card-text"> 
@@ -399,7 +416,7 @@
                 </div>
               </div>
 
-              <div class="card shadow-none no_border">
+              <div class="card shadow-none no_border ui_page4_option2">
                 <div class="card-body">
                   <h5 class="card-title">Выпуски</h5>
                   <p class="card-text"> 
@@ -416,6 +433,9 @@
                   </p>
                 </div>
               </div>
+
+
+
             </div>
 
             <div class="col text-center s12 m6 ui_pages" id="ui_page5" style="display: none">
@@ -723,6 +743,31 @@
             if(this.checked)
             {
               $("#n16_v1").prop("checked",false);
+            }
+          });
+
+          $(document).on("change","#n22_v1",function(event)
+          {
+            if(this.checked)
+            {
+              $("#n22_v2").prop("checked",false);
+              $(".ui_page4_option2").show();
+            }
+          });
+          $(document).on("change","#n22_v2",function(event)
+          {
+            if(this.checked)
+            {
+              $("#n22_v1").prop("checked",false);
+              $(".ui_page4_option2").hide();
+              ui_slider_n9.noUiSlider.updateOptions({
+                range: {
+                    'min': [18],
+                    'max': [30]
+                }
+              });
+              ui_slider_n9.noUiSlider.set([18]);
+
             }
           });
 
@@ -1133,6 +1178,7 @@
           var dn15=0;
           var dn16=0;
           var dn17=0;
+          var dn22=1;
 
           var dn_email="";
           var dn_tel="";
@@ -1223,6 +1269,15 @@
 
           dn17=ui_slider_n17.noUiSlider.get();
 
+          if($("#n22_v1").is(":checked"))
+          {
+            dn22=1;
+          }
+          else if($("#n22_v2").is(":checked"))
+          {
+            dn22=2;
+          };
+
           dn_email=$("#n_email").val();
           dn_tel=$("#n_tel").val();
           dn_name=$("#n_name").val();
@@ -1235,7 +1290,7 @@
             "entry.422916352":dn12,
             "entry.1559015410":dn13,"entry.929264366":dn14,"entry.700245185":dn15,
             "entry.208022057":dn16,"entry.1702945970":dn17,"entry.730279379":dn_email,
-            "entry.638214908":dn_tel,"entry.873304190":dn_name,"entry.2121988581":dn_descr
+            "entry.638214908":dn_tel,"entry.873304190":dn_name,"entry.2121988581":dn_descr,"entry.1155967803":dn22
           };
 
           var url = "https://docs.google.com/forms/d/e/1FAIpQLSfqyXfbUho-5C8kzpDTCijka0XfzYH0vmmBd2d7IOC5IMM-eA/formResponse";
