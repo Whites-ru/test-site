@@ -400,15 +400,15 @@
                   <p class="card-text"> 
                     <div class="row row-cols-3">
                       <div class="col" id="n11_v1">
-                        <img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n11_var rounded mx-auto d-block img-thumbnail" alt="...">
+                        <img src="https://svetlagornica.000webhostapp.com/6.jpg" class="n11_var rounded mx-auto d-block img-thumbnail" alt="...">
                         <figcaption class="figure-caption">русская рубка</figcaption>
                       </div>
                       <div class="col" id="n11_v2">
-                        <img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n11_var rounded mx-auto d-block img-thumbnail" alt="...">
+                        <img src="https://svetlagornica.000webhostapp.com/7.jpg" class="n11_var rounded mx-auto d-block img-thumbnail" alt="...">
                         <figcaption class="figure-caption">канадская рубка</figcaption>
                       </div>
                       <div class="col" id="n11_v3">
-                        <img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n11_var rounded mx-auto d-block img-thumbnail" alt="...">
+                        <img src="https://svetlagornica.000webhostapp.com/8.jpg" class="n11_var rounded mx-auto d-block img-thumbnail" alt="...">
                         <figcaption class="figure-caption">имитация канадской рубки</figcaption>
                       </div>
                     </div>
@@ -422,11 +422,11 @@
                   <p class="card-text"> 
                     <div class="row row-cols-2">
                       <div class="col" id="n12_v1">
-                        <img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n12_var rounded mx-auto d-block img-thumbnail" alt="...">
+                        <img src="https://svetlagornica.000webhostapp.com/9.jpg" class="n12_var rounded mx-auto d-block img-thumbnail" alt="...">
                         <figcaption class="figure-caption">обыкновенные</figcaption>
                       </div>
                       <div class="col" id="n12_v2">
-                        <img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="n12_var rounded mx-auto d-block img-thumbnail" alt="...">
+                        <img src="https://svetlagornica.000webhostapp.com/10.jpg" class="n12_var rounded mx-auto d-block img-thumbnail" alt="...">
                         <figcaption class="figure-caption">дикие</figcaption>
                       </div>
                     </div>
@@ -493,7 +493,7 @@
                       <div class="col" id="n1_v1">
                         <div id="ui_slider_n17"></div>
                       </div>
-                      <div class="col" id="n17_img"><img src="https://svetlagornica.000webhostapp.com/banya31.JPG" class="rounded mx-auto d-block img-thumbnail" alt="..."></div>
+                      <div class="col" id="n17_img"><img id="n17_img_img" src="https://svetlagornica.000webhostapp.com/15.jpg" class="rounded mx-auto d-block img-thumbnail" alt="..."></div>
                     </div>
                   </p>
                 </div>
@@ -1146,6 +1146,12 @@
                 }
               });
               $("#n7_text").attr("max",values[handle]);
+          });
+
+          ui_slider_n17.noUiSlider.on('update', function (values, handle) 
+          {
+             var n = parseInt(values[handle]);
+             $("#n17_img_img").prop("src","https://svetlagornica.000webhostapp.com/"+n+".jpg"); 
           });
 
           $(".noUi-marker-sub").removeClass("noUi-marker-sub").addClass("noUi-marker-large");
