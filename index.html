@@ -179,6 +179,7 @@
         border-radius: 1.5rem!important;
         outline: none!important;
       }
+      
 
 
     </style>
@@ -549,6 +550,9 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js"></script>
 
      <script type="text/javascript">
+
+
+
       function f_ui_init()
       {
           $(".ui_pages").hide();
@@ -1160,9 +1164,13 @@
 
         $(document).ready(function() 
         {
+
+
+
           f_init_sliders(); 
           f_ui_init();  
-          toggleFullScreen();
+          window.scrollTo(0,1);
+          
                       
         });
 
@@ -1344,20 +1352,7 @@
             });
         };
 
-        function toggleFullScreen() {
-          var doc = window.document;
-          var docEl = doc.documentElement;
-
-          var requestFullScreen = docEl.requestFullscreen || docEl.mozRequestFullScreen || docEl.webkitRequestFullScreen || docEl.msRequestFullscreen;
-          var cancelFullScreen = doc.exitFullscreen || doc.mozCancelFullScreen || doc.webkitExitFullscreen || doc.msExitFullscreen;
-
-          if(!doc.fullscreenElement && !doc.mozFullScreenElement && !doc.webkitFullscreenElement && !doc.msFullscreenElement) {
-            requestFullScreen.call(docEl);
-          }
-          else {
-            cancelFullScreen.call(doc);
-          }
-        }
+        
     </script>
     
   </body>
