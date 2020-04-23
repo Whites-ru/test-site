@@ -548,7 +548,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/nouislider@14.1.1/distribute/nouislider.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/screenfull@5.0.2/dist/screenfull.min.js"></script>
 
      <script type="text/javascript">
 
@@ -1165,22 +1164,8 @@
 
         $(document).ready(function() 
         {
-
-
-
           f_init_sliders(); 
-          f_ui_init();  
-
-
-          if (screenfull.isEnabled) {
-            screenfull.request();
-          } else {
-            // Ignore or do something else
-          }
-       
-          
-          
-                      
+          f_ui_init();              
         });
 
         function f_result_init()
