@@ -339,7 +339,7 @@
 
             <div class="col text-center s12 m6 ui_pages" id="ui_page4" style="display: none">
 
-              <div class="card shadow-none no_border ui_page4_option3">
+              <div class="card shadow-none no_border">
                 <div class="card-body">
                   <h5 class="card-title">Обработка бревна</h5>
                   <p class="card-text" style="padding-top: 3%;">
@@ -356,7 +356,7 @@
                 </div>
               </div>
 
-               <div class="card shadow-none no_border">
+               <div class="card shadow-none no_border ui_page4_option3">
                 <div class="card-body">
                   <h5 class="card-title">Диаметр, см</h5>
                   <p class="card-text" style="padding-top: 3%;">
@@ -791,6 +791,7 @@
             if(this.checked)
             {
               $("#n22_v2").prop("checked",false);
+              $(".ui_page4_option3").show();
               $(".ui_page4_option2").show();
             }
 
@@ -809,7 +810,8 @@
                 }
               });
               ui_slider_n9.noUiSlider.set([18]);
-
+              $(".ui_page4_option3").show();
+              $("#ui_page4_option1").hide();
             }
 
             //$(".ui_page4_option3")
@@ -1210,9 +1212,7 @@
 
         ui_slider_n9.noUiSlider.on('update', function (values, handle) 
         {
-           $(".ui_page4_option3").show();
            is_page4_input=true;
-
         });
 
         $(".noUi-marker-sub").removeClass("noUi-marker-sub").addClass("noUi-marker-large");
