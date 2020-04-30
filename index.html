@@ -1193,6 +1193,15 @@
               }
             });
             $("#n4_text").attr("max",values[handle]);
+
+            ui_slider_n5.noUiSlider.updateOptions({
+              range: {
+                  'min': [10],
+                  'max': [parseInt(values[handle])]
+              }
+            });
+            $("#n5_text").attr("max",values[handle]);
+
         });
 
         ui_slider_n5.noUiSlider.on('update', function (values, handle) {
@@ -1223,8 +1232,8 @@
 
        // $(document).ready(function() 
         //{
-         // f_init_sliders(); 
-       //   f_ui_init();              
+        // f_init_sliders(); 
+      //   f_ui_init();              
        // });
 
       function f_result_init()
