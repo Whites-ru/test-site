@@ -277,7 +277,7 @@
                         </div>
                       </div>
                       <div>
-                        <input type="number" min="0" max="2000" class="form-control ui_text_manual" id="n4_text" style="display: none">
+                        <input type="number" min="0" max="300" class="form-control ui_text_manual" id="n4_text" style="display: none">
                       </div>
                     </div>
                   </p>
@@ -341,7 +341,7 @@
 
               <div class="card shadow-none no_border">
                 <div class="card-body">
-                  <h5 class="card-title">Обработка бревна</h5>
+                  <h5 class="card-title">Технология строительства</h5>
                   <p class="card-text" style="padding-top: 3%;">
                     <div class="row">
                       <div class="col custom-control custom-checkbox border rounded ui_page_quest">
@@ -349,7 +349,7 @@
                       </div>
                       <div class="col-sm-auto"></div>
                       <div class="col custom-control custom-checkbox border rounded ui_page_quest">
-                          <input type="checkbox" class="custom-control-input" id="n22_v2"><label class="custom-control-label" for="n22_v2">оцилиндрованное бревно</label>
+                          <input type="checkbox" class="custom-control-input" id="n22_v2"><label class="custom-control-label" for="n22_v2">сухое оцилиндрованное бревно</label>
                       </div>
                     </div>
                   </p>
@@ -411,7 +411,7 @@
 
               <div class="card shadow-none no_border ui_page4_option2">
                 <div class="card-body">
-                  <h5 class="card-title">Технология</h5>
+                  <h5 class="card-title">Виды рубок</h5>
                   <p class="card-text"> 
                     <div class="row row-cols-3">
                       <div class="col" id="n11_v1">
@@ -433,7 +433,7 @@
 
               <div class="card shadow-none no_border ui_page4_option2">
                 <div class="card-body">
-                  <h5 class="card-title">Выпуски</h5>
+                  <h5 class="card-title">Выпуски бревна</h5>
                   <p class="card-text"> 
                     <div class="row row-cols-2">
                       <div class="col" id="n12_v1">
@@ -488,7 +488,7 @@
                       </div>
                       <div class="col-sm-auto"></div>
                       <div class="col custom-control custom-checkbox border rounded ui_page_quest">
-                          <input type="checkbox" class="custom-control-input" id="n16_v2"><label class="custom-control-label" for="n16_v2">Нет</label>
+                          <input type="checkbox" class="custom-control-input" id="n16_v2" checked="checked"><label class="custom-control-label" for="n16_v2">Нет</label>
                       </div>
                     </div>
                   </p>
@@ -519,14 +519,6 @@
                   <p class="card-text"> 
                     <form class="container-fluid text-md-left">
                       <div class="form-group">
-                        <label for="n_email">Ваш email</label>
-                        <input type="email" class="form-control" id="n_email">
-                      </div>
-                      <div class="form-group">
-                        <label for="n_tel">Телефон</label>
-                        <input type="tel" class="form-control" id="n_tel">
-                      </div>
-                      <div class="form-group">
                         <label for="n_name">Имя</label>
                         <input type="text" class="form-control" id="n_name">
                       </div>
@@ -535,8 +527,16 @@
                         <input type="text" class="form-control" id="n_mesto">
                       </div>
                       <div class="form-group">
+                        <label for="n_email">Ваш email</label>
+                        <input type="email" class="form-control" id="n_email">
+                      </div>
+                      <div class="form-group">
+                        <label for="n_tel">Телефон</label>
+                        <input type="tel" class="form-control" id="n_tel">
+                      </div>
+                      <div class="form-group">
                         <label for="n_descr">Комментарий</label>
-                        <textarea class="form-control" id="n_descr" rows="3"></textarea>
+                        <textarea class="form-control" id="n_descr" rows="3" placeholder="Можно оставить вопрос или написать, всё что считаете нужным"></textarea>
                       </div>
                     </form>
                   </p>
@@ -795,6 +795,26 @@
               $("#n22_v2").prop("checked",false);
               $(".ui_page4_option3").show();
               $(".ui_page4_option2").show();
+
+              $("#n8_v1").prop("checked",true);
+              ui_slider_n9.noUiSlider.set([34]);
+
+              $("#n11_v1").addClass("n11_v1_selected");
+              $("#n12_v1").addClass("n12_v1_selected");
+
+              $("#n8_v1").prop("disabled",false);
+              $("#n8_v2").prop("disabled",false);
+              $("#n8_v3").prop("disabled",false);
+
+              $("#n10_v1").prop("disabled",false);
+              $("#n10_v2").prop("disabled",false);
+
+              $("#n11_v1").prop("disabled",false);
+              $("#n11_v2").prop("disabled",false);
+              $("#n11_v3").prop("disabled",false);
+
+              $("#n12_v1").prop("disabled",false);
+              $("#n12_v2").prop("disabled",false);
             }
 
 
@@ -814,6 +834,23 @@
               ui_slider_n9.noUiSlider.set([18]);
               $(".ui_page4_option3").show();
               $("#ui_page4_option1").hide();
+
+
+              $("#n8_v1").prop("disabled",true);
+              $("#n8_v2").prop("disabled",true);
+              $("#n8_v3").prop("disabled",true);
+
+              $("#n10_v1").prop("disabled",true);
+              $("#n10_v2").prop("disabled",true);
+
+              $("#n11_v1").prop("disabled",true);
+              $("#n11_v2").prop("disabled",true);
+              $("#n11_v3").prop("disabled",true);
+
+              $("#n12_v1").prop("disabled",true);
+              $("#n12_v2").prop("disabled",true);
+              
+
             }
 
             //$(".ui_page4_option3")
@@ -891,10 +928,42 @@
             if($(this).parent().prop("id")==="n1_v3")
             {
               $("#ui_n15_option").show();
+              $("#ui_slider_n14").prop("disabled",true);
+
             }
             else
             {
               $("#ui_n15_option").hide();
+              $("#ui_slider_n14").prop("disabled",false);
+            }
+
+            if($(this).parent().prop("id")==="n1_v1" || $(this).parent().prop("id")==="n1_v2")
+            {
+              $("#ui_slider_n5").prop("disabled",true);
+              $("#ui_n5_manual").prop("disabled",true);
+
+              $("#ui_slider_n6").prop("disabled",true);
+              
+              $("#ui_slider_n7").prop("disabled",true);
+              $("#ui_n7_manual").prop("disabled",true);
+
+              $("#ui_slider_n14").prop("disabled",true);
+              
+              $("#ui_slider_n15").prop("disabled",true);
+            }
+            else
+            {
+              $("#ui_slider_n5").prop("disabled",false);
+              $("#ui_n5_manual").prop("disabled",false);
+
+              $("#ui_slider_n6").prop("disabled",false);
+              
+              $("#ui_slider_n7").prop("disabled",false);
+              $("#ui_n7_manual").prop("disabled",false);
+
+              $("#ui_slider_n14").prop("disabled",false);
+              
+              $("#ui_slider_n15").prop("disabled",false);
             }
           });
 
@@ -1011,7 +1080,7 @@
       {
         var ui_slider_n2 = document.getElementById("ui_slider_n2");
         noUiSlider.create(ui_slider_n2, {
-            start: [10],
+            start: [200],
             step: 1,
             range: {
                 'min': [10],
@@ -1028,7 +1097,7 @@
 
         var ui_slider_n3 = document.getElementById("ui_slider_n3");
         noUiSlider.create(ui_slider_n3, {
-            start: [1],
+            start: [5],
             step: 1,
             range: {
                 'min': [1],
@@ -1045,11 +1114,11 @@
 
         var ui_slider_n4 = document.getElementById("ui_slider_n4");
         noUiSlider.create(ui_slider_n4, {
-            start: [0],
+            start: [20],
             step: 1,
             range: {
                 'min': [0],
-                'max': [40]
+                'max': [300]//[40]
             },
             connect: true,
             pips: {
@@ -1062,7 +1131,7 @@
 
         var ui_slider_n5 = document.getElementById("ui_slider_n5");
         noUiSlider.create(ui_slider_n5, {
-            start: [10],
+            start: [200],
             step: 1,
             range: {
                 'min': [10],
@@ -1077,7 +1146,7 @@
         });
         var ui_slider_n6 = document.getElementById("ui_slider_n6");
         noUiSlider.create(ui_slider_n6, {
-            start: [1],
+            start: [5],
             step: 1,
             range: {
                 'min': [1],
@@ -1092,7 +1161,7 @@
         });
         var ui_slider_n7 = document.getElementById("ui_slider_n7");
         noUiSlider.create(ui_slider_n7, {
-            start: [0],
+            start: [20],
             step: 1,
             range: {
                 'min': [0],
@@ -1123,7 +1192,7 @@
         });
         var ui_slider_n13 = document.getElementById("ui_slider_n13");
         noUiSlider.create(ui_slider_n13, {
-            start: [220],            
+            start: [280],            
             step: 1,
             range: {
                 'min': [220],
@@ -1139,7 +1208,7 @@
         });
         var ui_slider_n14 = document.getElementById("ui_slider_n14");
         noUiSlider.create(ui_slider_n14, {
-            start: [220],
+            start: [280],
             step: 1,
             range: {
                 'min': [220],
@@ -1154,7 +1223,7 @@
         });
         var ui_slider_n15 = document.getElementById("ui_slider_n15");
         noUiSlider.create(ui_slider_n15, {
-            start: [50],
+            start: [150],
             step: 1,
             range: {
                 'min': [50],
@@ -1169,7 +1238,7 @@
         });
         var ui_slider_n17 = document.getElementById("ui_slider_n17");
         noUiSlider.create(ui_slider_n17, {
-            start: [15],
+            start: [30],
             step: 1,
             range: {
                 'min': [15],
@@ -1186,18 +1255,18 @@
         ui_slider_n2.noUiSlider.on('update', function (values, handle) 
         {
             //ui_slider_n2_value.innerHTML = parseInt(values[handle]);
-            ui_slider_n4.noUiSlider.updateOptions({
-              range: {
-                  'min': [0],
-                  'max': [parseInt(values[handle])]
-              }
-            });
+            // ui_slider_n4.noUiSlider.updateOptions({
+            //   range: {
+            //       'min': [0],
+            //       'max': [parseInt(values[handle])]
+            //   }
+            // });
             $("#n4_text").attr("max",values[handle]);
 
             ui_slider_n5.noUiSlider.updateOptions({
               range: {
                   'min': [10],
-                  'max': [parseInt(values[handle])]
+                  'max': [parseInt(values[handle])+parseInt(ui_slider_n4.noUiSlider.get())]
               }
             });
             $("#n5_text").attr("max",values[handle]);
@@ -1209,7 +1278,7 @@
             ui_slider_n7.noUiSlider.updateOptions({
               range: {
                   'min': [0],
-                  'max': [parseInt(values[handle])]
+                  'max': [ ( parseInt(ui_slider_n2.noUiSlider.get())+parseInt(ui_slider_n4.noUiSlider.get()) )-parseInt(values[handle] ) ]
               }
             });
             $("#n7_text").attr("max",values[handle]);
@@ -1231,9 +1300,9 @@
       };
 
        // $(document).ready(function() 
-        //{
-        // f_init_sliders(); 
-      //   f_ui_init();              
+       //  {
+       //  f_init_sliders(); 
+       //  f_ui_init();              
        // });
 
       function f_result_init()
@@ -1489,7 +1558,7 @@
         }
         else if(did_page=="ui_page7")
         {
-          if($("#n_email").val()!="" && $("#n_tel").val()!="" && $("#n_name").val()!="" && $("#n_descr").val()!="" && $("#n_mesto").val()!="")
+          if( ($("#n_email").val()!="" || $("#n_tel").val()!="") && $("#n_mesto").val()!="")
           {
             res=true;
           }
